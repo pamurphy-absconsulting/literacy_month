@@ -1,0 +1,34 @@
+[
+  {
+    "date": "2026-04-01",
+    "title": "Day 1: What is SIERRA?",
+    "description": "Learn what Sierra is—a secure ABS portal to frontier models in Azure—why it is preferred over public AI for work data, and how the information you provide drives useful answers.",
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=36a44d7c-6ed2-4d49-8189-332d4614f8e5",
+    "resourceType": "video",
+    "exerciseMarkdown": "### Exercise\n\nBrowse to https://sierra.absconsulting.com.\n\nIf this is your first time, it will prompt you to accept the Data Policy.\n\nOnce you reach the home page, submit the simple prompt: \"Who are you?\"\n\nReview the output and ask follow up questions related to today's training video or to see what else SIERRA can do.\n\nClick \"Chat\" to start a new message.\n\nAsk for instructions for how to save SIERRA as an app using Microsoft Edge.\n\nThen, we recommend following the instructions."
+  },
+  {
+    "date": "2026-04-02",
+    "title": "Day 2: SIERRA Data Policy",
+    "description": "Understand how Sierra protects information—models hosted in secure Azure, private chats (including in workspaces), how web search avoids leaking your conversation into queries, the data policy, and when client contracts override allowed use.",
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=2f9bfd56-bf80-4fda-ba73-cd61765cab82",
+    "resourceType": "video",
+    "exerciseMarkdown": "### Exercise\n\nOpen SIERRA (hopefully you've got it pinned to your task bar by now).\n\nClick on your user name in the lower left corner to open your account menu.\n\nClick \"Data policy\" to open the data policy that you agreed to when you started using SIERRA.\n\nYou can also find this page by clicking the \"Information\" button in the left navigation bar. This will open SIERRA's documentation site, which includes the \"Data Policy\" page."
+  },
+  {
+    "date": "2026-04-03",
+    "title": "Day 3: What are LLMs?",
+    "description": "Introduction to large language models as statistical engines trained on massive web text—what people mean when they call an LLM a \"text calculator\" and how it predicts the most likely next tokens—a bridge to what models \"know\" versus what you must provide.",
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=63999f81-3b89-4a89-89ec-aab80c9040d9",
+    "resourceType": "video",
+    "exerciseMarkdown": "### Exercise\n\nOpen SIERRA.\n\nSubmit a prompt similar to: \"You are an expert process safety engineer. You recently heard about a string of pump failures at your company. If you had to guess, what would you think the most likely driver of this recent trend would be? Answer in one sentence.\"\n\nReview the answer. Now, click the \"regenerate\" icon at then bottom of the completed response. How similar is the regenerated answer to the first one?\n\nRepeat the previous step.\n\nNow, see what happens if you can make slight changes to the prompt. For example, swap out the type of equipment, or the type of expert. See what happens if the expert is instead a marine engineer, a comedian, or a fish. What happens if you delete the words \"most likely\"? What happens if you delete the words \"a string of\"?\n\nSome words are important to the AI response, others are \"bystanders\" that are not so important.\n\nFinally, use the dropdown in the chat bar to select different models (e.g. ChatGPT 5.4, Claude Sonnet 4.6, etc.) and see how they handle the same prompt/request."
+  },
+  {
+    "date": "2026-04-06",
+    "title": "Day 4: What LLMs Know?",
+    "description": "Context you provide in prompts and files versus internal knowledge from model training—the model has nothing beyond those two, so richer context is how you get accurate, job-specific answers.",
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=5cb1fefe-46b6-435b-89ed-b48e89859e95",
+    "resourceType": "video",
+    "exerciseMarkdown": "### Exercise\n\nOpen SIERRA.\n\nSubmit a prompt similar to: \"Who am I?\" For most people. For most users, SIERRA should respond with an uninformed response with little more than your name.\n\n(For those curious, if SIERRA seems to know substantially more about you, there are three places this information could be coming from: 1) Skillshare, especially for Group employees. 2) SIERRA style instructions. 3) Memories. We'll discuss these more throughout the learning month.\n\nFor the next step, make sure that \"Memories\" is turned on on your settings page (found in the menu in the lower left corner).\n\nNow, start a new thread and tell SIERRA about yourself, including what you do at ABS. Then tell SIERRA to \"remember that.\" SIERRA should then record the information and ask whether you would like SIERRA to remember it. Click \"Accept\". Now SIERRA has more context about you that it can use to tailor answers to your needs.\n\nStart a new thread and ask \"Who am I?\". SIERRA should recall the new memories about you via the memory context that is being provided to the LLM.\n\nNote: SIERRA's memories are only to help SIERRA perform better for you. We don't use them for anything else, and no other users have access to them."
+  }
+]
