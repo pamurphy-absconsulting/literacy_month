@@ -54,18 +54,19 @@
 
 **Day 11: The Context Window — What Sierra Sees**
 
-- The LLM only processes what's in its context window at the moment of each response — nothing more
+- The context window is the maximum amount of text the model can process at one time — it determines everything Sierra can "see" when generating a response
 - Several sources inject content into that window:
   - **Your prompt** — what you write explicitly
   - **System prompt** — Sierra's base instructions, set at the application level
-  - **Memories** — personal persistent context, injected automatically into every thread
-  - **Workspace context & memories** — team-level persistent context, injected for every workspace thread
+  - **Personal memories** — your persistent context, injected automatically in standard threads
+  - **Workspace context & workspace memories** — team-level persistent context, injected for every workspace thread
   - **Retrieved chunks** — relevant content pulled in via RAG from files, knowledge bases, or the web
   - **Conversation history** — prior turns in the thread (this is why longer threads cost more)
 - Persistent vs. ephemeral: memories and workspace context survive across threads; uploads and retrieved content do not
-- Important: personal memories do not apply inside workspaces — workspace memories replace them there
+- Important: personal memories do not apply inside workspaces — workspace memories replace them; workspace memories do not carry over to regular chats
+- This is the mental model behind all of Sierra's features — workspaces, memories, and retrieval tools all exist to put the right information in front of the model automatically
 
-[Visual: A central box labeled "CONTEXT WINDOW — What Sierra Sees." Six labeled arrows flowing into it from outside: YOUR PROMPT, SYSTEM PROMPT, MEMORIES (personal or workspace), WORKSPACE CONTEXT, RAG RESULTS, CONVERSATION HISTORY. Below the box: a horizontal divider — left side "Persistent (survives across threads)" showing Memories + Workspace Context; right side "Ephemeral (this thread only)" showing RAG Results + Conversation History. Clean, layered diagram.]
+[Visual: A central box labeled "CONTEXT WINDOW — What Sierra Sees." Six labeled arrows flowing into it from outside: YOUR PROMPT, SYSTEM PROMPT, PERSONAL MEMORIES, WORKSPACE CONTEXT & MEMORIES, RAG RESULTS, CONVERSATION HISTORY. Below the box: a horizontal divider — left side "Persistent (survives across threads)" showing Personal Memories + Workspace Context & Memories; right side "Ephemeral (this thread only)" showing RAG Results + Conversation History. Clean, layered diagram.]
 
 **ABS & Affiliated Companies**
 
@@ -82,10 +83,10 @@
 - RAG in practice: your query → semantic search → relevant chunks retrieved → added to context window → model responds
 - The model only sees what gets retrieved — not the entire knowledge base
 - This means: **specific queries = better retrieval = better answers** (same principle as Day 9 prompting)
-- RAG is the mechanism behind all of Sierra's knowledge tools — file uploads, workspace files, Plato, SkillShare, HR — same pipeline, different sources
-- Web search works the same way — same retrieval model, pulling from the live web instead of an internal knowledge base
+- RAG is the mechanism behind all of Sierra's knowledge tools — file uploads, workspace files, Plato, eCFR, SkillShare, HR — same pipeline, different sources
+- Web search works the same way — live web instead of an internal knowledge base; if Sierra thinks a query may contain confidential information, it will ask for your approval before sending
 
-[Visual: A pipeline diagram — left to right: YOUR QUERY → SEMANTIC SEARCH → CHUNKS RETRIEVED → CONTEXT WINDOW → MODEL → RESPONSE. Below the "SEMANTIC SEARCH" step: a fork showing three source options: "Your Files" (thread attachments), "Workspace / Knowledge Bases" (Plato, workspace files, HR, SkillShare), "Web Search" (live web). All three are labeled as flavors of the same retrieval process.]
+[Visual: A pipeline diagram — left to right: YOUR QUERY → SEMANTIC SEARCH → CHUNKS RETRIEVED → CONTEXT WINDOW → MODEL → RESPONSE. Below the "SEMANTIC SEARCH" step: a fork showing three source options: "Your Files" (thread attachments), "Workspace / Knowledge Bases" (Plato, eCFR, workspace files, HR, SkillShare), "Web Search" (live web, with approval for sensitive queries). All three are labeled as flavors of the same retrieval process.]
 
 **ABS & Affiliated Companies**
 
