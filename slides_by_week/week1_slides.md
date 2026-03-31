@@ -13,16 +13,17 @@
 **Day 1: Why Sierra**
 
 ### Sierra:
-- Is the ABS-approved AI assistant
-- Uses best-available AI models
-- Resides on ABS IT infrastructure
+- Is the ABS-approved AI assistant — built and maintained by the ABS AI Center of Excellence
+- Provides access to frontier models: GPT-5, Claude, and Grok — rotated regularly for best performance
+- Resides on ABS IT infrastructure (Microsoft Azure)
 - Protects client data
 - Keeps messages private from AI vendors
 - Meets compliance requirements
 
 ### Other AI Assistants:
 - Not explicitly approved for use
-- Data leakage
+- Prompts and uploaded files are sent to providers — potentially used for model training
+- No guarantee against third-party data use
 
 **ABS & Affiliated Companies**
 
@@ -37,16 +38,20 @@
 **Day 2: Privacy, Security & Data Governance**
 
 ### Policy Compliance
-- Users must abide by the Sierra Data Policy.
-- Data Policy is superseded by client contractual terms.
+- **Never permitted:** PII, ITAR/Export Restricted Data, Government Classified Data at any level
+- **Sometimes permitted:** Client data — depends on client contract; if on client paper, check with legal
+- **Always permitted:** ABS IP and internal data (if produced under a client contract, may be considered client data — check with legal)
+- Data Policy is superseded by client contractual terms — some clients prohibit AI use even via Sierra; check with manager or legal if unsure
+- Your prompts are private from other users but can be audited by system administrators for proper business use
 
 ### App Design & Data Governance
-- Chat threads are private.
-- Workspaces manage collaboration.
-- Limited web search/external resource usage.
+- Chat threads are private — accessible only to you.
+- Workspaces manage team collaboration; individual chats within workspaces remain private.
+- Web search available — uses targeted queries only, not your full chat context; confidential queries require your approval before sending.
 
 ### Protected IT Infrastructure
-- Approved by ABS cyber teams.
+- Hosted on Microsoft Azure; approved by ABS cyber teams.
+- Data is not sent to model providers or third parties.
 
 [Diagram: Pyramid with three sections:
 - **Top (Blue):** Policy Compliance

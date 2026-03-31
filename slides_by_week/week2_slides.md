@@ -20,6 +20,7 @@
 - The LLM has its own general knowledge that "comes with it."
 - It can also react to external knowledge, "Context," that is provided to it.
 - **There is no other knowledge available to it.**
+- Sierra cannot help with ABS-specific work unless you provide ABS-specific context — the model has no knowledge of your projects, clients, or procedures.
 
 **ABS & Affiliated Companies**
 
@@ -44,9 +45,9 @@
 - Events that occurred prior to the creation of their training data (cutoff date)
 - Information & logic that is inferable from statistical patterns in the source text
 
-*Note: Newer LLMs have more recent cutoff dates and deeper domain knowledge.*
+*Note: Models currently in Sierra have training cutoffs ranging from late 2024 to mid-2025. Newer models have deeper domain knowledge.*
 
-**Other knowledge can be provided as context, but is not "built in."**
+**The model has no knowledge of ABS — its rules, procedures, clients, projects, or people. This must all be provided as context.**
 
 **ABS & Affiliated Companies**
 
@@ -64,9 +65,10 @@
 
 **Core Ideas**
 - Training uses massive datasets and compute to create foundation models — *this is very expensive!*
-- Developed by major AI companies: OpenAI, Anthropic, xAI, Google
+- Developed by major AI companies: OpenAI, Anthropic, xAI
 - LLMs are static — thus we connect them to internal knowledge systems
 - **ABS does NOT train its own LLMs**
+- **Sierra does not learn from your conversations** — your chats do not change the model in any way
 
 **ABS & Affiliated Companies**
 
@@ -80,19 +82,17 @@
 
 **Day 7: Tokens & LLM Cost**
 
-- Every LLM request incurs a cost.
-- Cost is based on the number of tokens processed — both input and output.
-- Tokens are small pieces of text — words, parts of words, punctuation.
-- A token is about 3-4 characters.
-- Models process entire conversation history to keep track.
-- More history = higher cost.
-- Models perform best when given focused context rather than very long scattered threads.
+- Tokens are small pieces of text — words, parts of words, punctuation (~4 characters, ~0.75 words; about 666 tokens per page).
+- Every LLM request is priced on tokens processed — both input and output. Tokens are inexpensive; ABS absorbs significant usage.
+- Models reprocess the entire conversation history with each message.
+- Long, scattered threads degrade answer quality — the model has to sort through noise to find what matters.
+- Focused threads = better answers. Cost savings is a secondary benefit.
 
 **About tokens...**
 Language models break text into smaller tokens before processing it.
 - Example: **Lan** → [1.2323, 0.223, -4.797, …] / **guage** → [-0.156, 3.583, …] / **models** → [-4.897, 2.196, …]
 
-**When you start a fresh topic in Sierra, start a new thread to minimize cost and improve response accuracy.**
+**When switching topics, start a new thread — primarily for better answers, and secondarily to keep costs down.**
 
 **ABS & Affiliated Companies**
 
@@ -111,6 +111,8 @@ Language models break text into smaller tokens before processing it.
 - Models are trained to produce the most probable continuation of text, not necessarily the most truthful continuation.
 - This often occurs with insufficient context — it fills a gap based on patterns, not real data.
 - This is why much of our focus is on building internal knowledge systems.
+
+**Always review Sierra outputs before sending to clients — fluent does not mean accurate.**
 
 [Diagram: Smiling face with star-shaped eyes inside a yellow circle, flanked by a blue input arrow on the left and an orange output arrow with an exclamation mark on the right.]
 
