@@ -72,7 +72,7 @@
 **Day 22: What You Now Know**
 
 - You understand what Sierra is, how it works, and why it's the right tool for ABS work
-- You know the mental model: context window → retrieval (RAG) → prompting → workspaces → full workflows
+- You know the mental model: model limits → context → retrieval (RAG) → prompting → workspaces → full workflows
 - The habits that matter: focused threads, specific queries, provide context before you prompt, verify before you send
 - Sierra keeps improving — your understanding of the fundamentals means you can adapt as it does
 - What's next: certification exam through iAchieve — and then actually using this every day

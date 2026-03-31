@@ -28,35 +28,43 @@
 ### WEEK 2 (April 7-11): AI Fundamentals
 *5 days: Monday - Friday*
 
-**Day 4: What Else Can LLMs "Know"?**
-- The LLM has its own general knowledge that "comes with it" (internal knowledge)
-- It can also react to external knowledge — "Context" — that is provided to it
-- There is no other knowledge available to it
-- *(Visual: Context + Internal LLM Knowledge — two circles, no third source)*
+**Day 4: What the Model Knows — and Where It Stops**
+- Internal knowledge does NOT include: anything never on the public internet, events after training cutoff, anything ABS-specific
+- Internal knowledge DOES include: public knowledge, historical events, general logic, deep domain expertise
+- Training cutoffs for current Sierra models: late 2024 to mid-2025
+- Rule of thumb: if it was never on the public internet, it is not in the model's internal knowledge
+- Everything ABS-specific must come from the user through context
 
-**Day 5: What LLMs Know and Do Not Know**
-- Internal knowledge includes: publicly available knowledge, historical events, general logic inferable from training data
-- Deep domain knowledge and corporate IP are at the edges or outside — not reliably built in
-- Knowledge cutoff: newer LLMs have more recent cutoffs and deeper domain knowledge
-- Other knowledge can be provided as context, but is not "built in"
+**Day 5: Context — The Lever You Control**
+- Two and only two sources: internal knowledge (fixed) and context (what you provide)
+- Context is the lever users control — internal knowledge is not
+- Context includes: prompt text, files you attach, conversation history
+- The model works with both simultaneously — context shapes what it reasons over
+- Goal: load up context with what the model can't know on its own
 
-**Day 6: How LLMs Are Built and Customized**
-- Training uses massive datasets and compute to create foundation models — this is very expensive
-- Developed by major AI companies: OpenAI, Anthropic, xAI, Google
-- LLMs are static — thus we connect them to internal knowledge systems
-- ABS does NOT train its own LLMs
+**Day 6: How Sierra Bridges the Gap**
+- LLMs are static — parameters set at training, never change, never learn from conversations
+- Sierra does not learn from your conversations — your chats do not modify the model in any way
+- ABS does NOT train its own LLMs — too expensive, and a trained model is still static
+- Solution: ABS builds knowledge systems — curated repositories Sierra retrieves from on demand
+- Example: HR vacation policy — Sierra doesn't know it internally; it retrieves from an ABS-built knowledge base
+- As ABS evolves, we update knowledge systems — not the model
 
-**Day 7: Tokens & LLM Cost**
-- Every LLM request incurs a cost based on tokens processed — both input and output
-- Tokens are small pieces of text: words, parts of words, punctuation (~3–4 characters per token)
-- Models process entire conversation history to keep track — more history = higher cost
-- Models perform best with focused context rather than long, scattered threads; start a new thread for fresh topics
+**Day 7: Tokens, Cost & Context Window**
+- Tokens are small pieces of text: words, parts of words, punctuation (~4 characters, ~0.75 words; about 666 tokens per page)
+- Every LLM request is priced on tokens processed — both input and output; tokens are cheap, ABS absorbs significant usage
+- Models reprocess the entire conversation history with each message — long, noisy threads degrade output quality
+- Context window = working memory: everything the model can hold in mind at once while responding
+- Current Sierra models: 200,000 to 2,000,000 tokens (~300–3,000 pages); focused threads keep that memory on what matters
+- Starting a new thread when switching topics is primarily about quality, secondarily about cost
 
 **Day 8: What Is a Hallucination?**
 - A hallucination is a confident, fluent output not grounded in truth
 - Models are trained to produce the most probable continuation of text, not necessarily the most truthful
 - This often occurs with insufficient context — filling a gap based on patterns, not real data
 - This is why much of the focus is on building internal knowledge systems
+- Also watch for: out-of-date responses (verify anything time-sensitive against the cutoff) and irrelevant responses (if Sierra misses the point, add more context)
+- Always review outputs before sending to clients — fluent does not mean accurate
 
 ---
 
@@ -161,7 +169,7 @@
 - Build a repeatable research workflow in a workspace: load relevant files, set context, create a Task Mode for the research process
 
 **Day 22: What You Now Know — Wrap-Up & Certification Prep**
-- The mental model you've built: context window → retrieval → prompting → workspaces → full workflows
+- The mental model you've built: model limits → context → retrieval (RAG) → prompting → workspaces → full workflows
 - The habits that matter: focused threads, specific queries, provide context before you prompt, verify before you send
 - Common mistakes to avoid going forward
 - What's next: certification exam through iAchieve — and then actually using this every day
