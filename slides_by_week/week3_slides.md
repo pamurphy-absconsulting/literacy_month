@@ -40,22 +40,27 @@
 
 **Day 10: Structuring Complex Tasks**
 
-**Structured analysis — ask for a clear sequence, not just an answer**
-- On complex problems, specify the output structure: criteria → assessment → uncertainty → conclusion
-- This makes responses easier to review and easier to push back on
-- ABS example: *"Assess this vessel configuration against the relevant SOLAS requirements. For each requirement, state: requirement, whether it appears met, any uncertainty, and recommended follow-up. Then give a final conclusion."*
+**You are the SME. The model is not.**
+- Sierra does not know your process, your project, your client, or your professional judgment — you do
+- Its reasoning is only as good as the direction you give it
+- On complex tasks, your job is to explain how a competent person would think through this problem — then let Sierra execute that sequence
 
-**Task decomposition — break complex asks into steps**
-- One massive prompt on a complex task = one shot at getting it right
-- Sequential prompts = each step is reviewable before the next
+**Give it a reasoning sequence, not just a question**
+- Specify the structure: criteria → assessment → uncertainty → conclusion
+- This keeps the output reviewable and gives you something concrete to push back on
+- ABS example: *"Assess this vessel configuration against the relevant SOLAS requirements. For each requirement, state: the requirement, whether it appears met, any uncertainty, and recommended follow-up. Then give a final conclusion."*
+
+**Break it into steps the way you'd brief a junior analyst**
+- One massive prompt = one shot at getting it right
+- Sequential steps = each one is reviewable before the next
 - ABS example: Step 1: *"Extract the key findings from this survey data."* → Step 2: *"Rank by severity and client impact."* → Step 3: *"Write an executive summary for a non-technical client covering the top 3."*
 
-**Guide the approach — be explicit about how to evaluate**
+**Tell it what a senior person would watch out for**
 - *"Be conservative — flag any uncertainty rather than assuming compliance"*
 - *"Consider both the technical requirements and the client communication risk"*
 - *"Use the perspective of a senior ABS reviewer — flag what needs human verification"*
 
-[Visual: Three labeled sections — STRUCTURED ANALYSIS / TASK DECOMPOSITION / GUIDE THE APPROACH — each with a one-line ABS example. Connecting theme at bottom: "You're not just telling Sierra what to produce — you're directing how it evaluates."]
+[Visual: Three labeled sections — REASONING SEQUENCE / STEP-BY-STEP / GUIDE THE APPROACH — each with an ABS example. Header callout: "You are the SME. Sierra follows the reasoning you give it." Bottom: "You're not just telling Sierra what to produce — you're directing how it thinks through the problem."]
 
 **ABS & Affiliated Companies**
 

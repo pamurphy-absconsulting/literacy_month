@@ -79,10 +79,11 @@
 - Meta-prompt shortcut: ask Sierra to write the prompt for you from a rough description
 
 **Day 10: Structuring Complex Tasks**
-- Structured analysis: specify the output sequence — criteria, assessment, uncertainty, conclusion — makes complex responses easier to review and push back on
-- Task decomposition: break complex asks into sequential steps — each step is reviewable before the next
-- Guide the approach: be explicit about evaluation criteria and constraints — *"be conservative, flag uncertainty"* / *"use the perspective of a senior reviewer, flag what needs human verification"*
-- You're not just asking for output — you're shaping how the task is evaluated
+- You are the SME — Sierra does not know your process, project, or professional judgment; your job is to explain the reasoning sequence a competent person would follow
+- Give it a reasoning sequence, not just a question: specify structure — criteria, assessment, uncertainty, conclusion — makes responses easier to review and push back on
+- Break it into steps the way you'd brief a junior analyst: sequential prompts let you review each step before the next
+- Tell it what a senior person would watch out for: be explicit about evaluation criteria, constraints, and where to flag uncertainty
+- You're not just asking for output — you're directing how Sierra thinks through the problem
 
 **Day 11: Context Engineering**
 - The context window is everything the model processes at once — prompt, thread history, tool responses, system prompt, memories, workspace instructions
