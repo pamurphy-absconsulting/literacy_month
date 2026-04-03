@@ -13,7 +13,7 @@
 
 - Vague in = vague out — specificity is the single biggest lever you have
 - Four ingredients of a strong prompt:
-  - **Role** — tell Sierra what it is: *"You are a technical reviewer..."*
+  - **Role** — tell Sierra what perspective to take: *"You are acting as a technical reviewer..."*
   - **Task** — say exactly what you want: summarize, draft, compare, extract, rewrite
   - **Context** — give it the raw material: paste the document, describe the project, name the client
   - **Format** — tell it how to respond: bullet list, executive summary, table, plain language
@@ -71,7 +71,7 @@
 
 [Visual: Context Engineering diagram — prompt + thread history + past tool responses flow in from the left; system prompt + memories + style + user info flow in from the right; workspace instructions from the top. All feed into the Large Language Model. Response exits at the bottom.]
 
-- Everything in that diagram is the context window — your prompt is one input among many
+- That diagram shows the main inputs that can shape a response — your prompt is one input among many
 - **Left side (you control per thread):** prompt, thread history, past tool responses
 - **Right side (persistent, automatic):** system prompt, memories, style, user info
 - **Top (workspace-level):** workspace instructions — shared context that applies across threads in that workspace
