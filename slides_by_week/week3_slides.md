@@ -34,28 +34,28 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 10: Advanced Prompting Techniques*
+*Day 10: Structuring Complex Tasks*
 
 ---
 
-**Day 10: Controlling How Sierra Thinks**
+**Day 10: Structuring Complex Tasks**
 
-**Chain of thought — ask Sierra to reason before it concludes**
-- Add *"think through this step by step"* or *"walk me through your reasoning before giving an answer"*
-- Forces the model to show its work — more accurate on complex problems, easier to spot where it went wrong
-- ABS example: *"Walk through whether this vessel configuration meets each relevant SOLAS requirement before giving your conclusion."*
+**Structured analysis — ask for a clear sequence, not just an answer**
+- On complex problems, specify the output structure: criteria → assessment → uncertainty → conclusion
+- This makes responses easier to review and easier to push back on
+- ABS example: *"Assess this vessel configuration against the relevant SOLAS requirements. For each requirement, state: requirement, whether it appears met, any uncertainty, and recommended follow-up. Then give a final conclusion."*
 
 **Task decomposition — break complex asks into steps**
 - One massive prompt on a complex task = one shot at getting it right
 - Sequential prompts = each step is reviewable before the next
 - ABS example: Step 1: *"Extract the key findings from this survey data."* → Step 2: *"Rank by severity and client impact."* → Step 3: *"Write an executive summary for a non-technical client covering the top 3."*
 
-**Guide the reasoning — be explicit about approach**
+**Guide the approach — be explicit about how to evaluate**
 - *"Be conservative — flag any uncertainty rather than assuming compliance"*
-- *"Consider both the technical requirements and the client relationship before recommending"*
-- *"Approach this as a senior ABS surveyor reviewing for class renewal"*
+- *"Consider both the technical requirements and the client communication risk"*
+- *"Use the perspective of a senior ABS reviewer — flag what needs human verification"*
 
-[Visual: Three labeled sections — CHAIN OF THOUGHT / TASK DECOMPOSITION / GUIDE THE REASONING — each with a one-line ABS example. Connecting theme at bottom: "You're not just telling Sierra what to produce — you're directing how it thinks."]
+[Visual: Three labeled sections — STRUCTURED ANALYSIS / TASK DECOMPOSITION / GUIDE THE APPROACH — each with a one-line ABS example. Connecting theme at bottom: "You're not just telling Sierra what to produce — you're directing how it evaluates."]
 
 **ABS & Affiliated Companies**
 
@@ -63,25 +63,23 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 11: The Context Window — What Sierra Sees*
+*Day 11: Context Engineering*
 
 ---
 
-**Day 11: The Context Window — What Sierra Sees**
+**Day 11: Context Engineering**
 
-- The context window is the maximum amount of text the model can process at one time — it determines everything Sierra can "see" when generating a response
-- Several sources inject content into that window:
-  - **Your prompt** — what you write explicitly
-  - **System prompt** — Sierra's base instructions, set at the application level
-  - **Personal memories** — your persistent context, injected automatically in standard threads
-  - **Workspace context & workspace memories** — team-level persistent context, injected for every workspace thread
-  - **Retrieved chunks** — relevant content pulled in via RAG from files, knowledge bases, or the web
-  - **Conversation history** — prior turns in the thread (this is why longer threads cost more)
-- Persistent vs. ephemeral: memories and workspace context survive across threads; uploads and retrieved content do not
-- Important: personal memories do not apply inside workspaces — workspace memories replace them; workspace memories do not carry over to regular chats
-- This is the mental model behind all of Sierra's features — workspaces, memories, and retrieval tools all exist to put the right information in front of the model automatically
+[Visual: Context Engineering diagram — prompt + thread history + past tool responses flow in from the left; system prompt + memories + style + user info flow in from the right; workspace instructions from the top. All feed into the Large Language Model. Response exits at the bottom.]
 
-[Visual: A central box labeled "CONTEXT WINDOW — What Sierra Sees." Six labeled arrows flowing into it from outside: YOUR PROMPT, SYSTEM PROMPT, PERSONAL MEMORIES, WORKSPACE CONTEXT & MEMORIES, RAG RESULTS, CONVERSATION HISTORY. Below the box: a horizontal divider — left side "Persistent (survives across threads)" showing Personal Memories + Workspace Context & Memories; right side "Ephemeral (this thread only)" showing RAG Results + Conversation History. Clean, layered diagram.]
+- Everything in that diagram is the context window — your prompt is one input among many
+- **Left side (you control per thread):** prompt, thread history, past tool responses
+- **Right side (persistent, automatic):** system prompt, memories, style, user info
+- **Top (workspace-level):** workspace instructions — shared context that applies across threads in that workspace
+- Responses may draw on the broader context, not just your latest message — though not every piece of context carries equal weight
+- Context shifts depending on where you're working — in a workspace, workspace-level instructions and shared context shape every thread automatically
+- Context engineering = being deliberate about what's in that window. Prompting controls the left side. Memories and workspaces engineer the right. RAG fills it with retrieved knowledge.
+
+**Sierra isn't a chat box. It's a system you can configure.**
 
 **ABS & Affiliated Companies**
 
@@ -93,15 +91,16 @@
 
 ---
 
-**Day 12: How Sierra Retrieves Information (RAG)**
+**Day 12: Working with Files — Part 1**
 
-- RAG in practice: your query → semantic search → relevant chunks retrieved → added to context window → model responds
-- The model only sees what gets retrieved — not the entire knowledge base
-- This means: **specific queries = better retrieval = better answers** (same principle as Day 9 prompting)
-- RAG is the mechanism behind all of Sierra's knowledge tools — file uploads, workspace files, Plato, eCFR, SkillShare, HR — same pipeline, different sources
-- Web search works the same way — live web instead of an internal knowledge base; if Sierra thinks a query may contain confidential information, it will ask for your approval before sending
+- You can upload documents directly into a thread — Sierra does not read the whole file into the chat
+- In simplified terms: Sierra extracts text from the file, indexes it in retrievable sections, and retrieves the most relevant passages based on your query — those passages enter the context window
+- **Specific questions get better results than vague ones** — Sierra retrieves what your query points to, not everything in the file
+- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents tend to extract more reliably than image-heavy or poorly structured ones; extraction capabilities are actively improving
+- Thread attachments are temporary — Sierra does not carry them into new threads
+- Thread attachments vs. workspace files: isolated to one thread vs. persistent and shared across every user in the workspace
 
-[Visual: A pipeline diagram — left to right: YOUR QUERY → SEMANTIC SEARCH → CHUNKS RETRIEVED → CONTEXT WINDOW → MODEL → RESPONSE. Below the "SEMANTIC SEARCH" step: a fork showing three source options: "Your Files" (thread attachments), "Workspace / Knowledge Bases" (Plato, eCFR, workspace files, HR, SkillShare), "Web Search" (live web, with approval for sensitive queries). All three are labeled as flavors of the same retrieval process.]
+[Visual: File upload flow — FILE → EXTRACT TEXT → INDEX SECTIONS → RETRIEVE (based on query) → CONTEXT WINDOW → RESPONSE. Callout: "Sierra doesn't read the whole file. It retrieves the parts your question points to." Below: "Source quality affects retrieval quality — the clearer the document, the better the extraction."]
 
 **ABS & Affiliated Companies**
 
@@ -109,19 +108,19 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 13: Working with Files — Part 1*
+*Day 13: Working with Files — Part 2*
 
 ---
 
-**Day 13: Working with Files — Part 1**
+**Day 13: Working with Files — Part 2**
 
-- Upload documents directly into a thread — Sierra converts them to text, chunks the content, and retrieves relevant sections via RAG (the same pipeline from Day 12)
-- File-friendly: text-based PDFs, Word docs, Excel spreadsheets — structured, selectable text works best
-- File-unfriendly: scanned documents, image-heavy PDFs, complex nested tables — extraction quality drops significantly
-- Files uploaded to a thread are temporary — Sierra does not carry them into new threads
-- Thread attachments vs. workspace files: thread attachments stay isolated to a single thread; workspace files are persistent and shared across every user in the workspace
+- Sierra can generate structured output from files: summaries, extracted data, reformatted content, comparisons
+- If output format matters, give Sierra a template — paste an example of what you want and ask it to match the structure
+- Ask targeted questions rather than "summarize everything" — retrieval is query-driven, so specific asks surface specific content
+- Sierra gives you content to work with, not finished deliverables — apply final formatting, branding, and production in your document tools
+- Capabilities here are actively expanding; the habit that stays constant is: direct the output, then shape it into the final form yourself
 
-[Visual: Two-column table. Left — "Works Well" (green): text-based PDF, .docx, .xlsx, .txt. Right — "Watch Out" (orange/red): scanned PDF, image-heavy doc, complex table. Below the table: the RAG pipeline applied to files — FILE UPLOAD → CONVERT TO TEXT → CHUNK → VECTOR STORE → RETRIEVE → CONTEXT WINDOW. A callout at the bottom: "Thread attachment = temporary and isolated. Workspace file = persistent and shared."]
+[Visual: Before/after diagram. Left: "Messy or Raw Input" (rough text, inconsistent formatting). Center: arrow through "SIERRA + Template." Right: "Clean, Structured Output." Callout below: "Sierra produces the content. You handle the final formatting." Second callout: "Specific question → specific retrieval → better output."]
 
 **ABS & Affiliated Companies**
 

@@ -78,98 +78,89 @@
 - When a thread goes sideways, start fresh — don't fight it
 - Meta-prompt shortcut: ask Sierra to write the prompt for you from a rough description
 
-**Day 10: Controlling How Sierra Thinks**
-- Chain of thought: ask Sierra to reason step by step before concluding — more accurate on complex problems, easier to audit
+**Day 10: Structuring Complex Tasks**
+- Structured analysis: specify the output sequence — criteria, assessment, uncertainty, conclusion — makes complex responses easier to review and push back on
 - Task decomposition: break complex asks into sequential steps — each step is reviewable before the next
-- Guide the reasoning: be explicit about approach and constraints — *"be conservative, flag uncertainty"* / *"consider both technical and commercial implications"*
-- You're not just telling Sierra what to produce — you're directing how it thinks
+- Guide the approach: be explicit about evaluation criteria and constraints — *"be conservative, flag uncertainty"* / *"use the perspective of a senior reviewer, flag what needs human verification"*
+- You're not just asking for output — you're shaping how the task is evaluated
 
-**Day 11: The Context Window — What Sierra Sees**
-- The LLM only processes what's in its context window at the moment of each response
-- What gets injected: your prompt, system prompt, memories, workspace context, retrieved chunks, conversation history
-- Persistent vs. ephemeral: memories and workspace context persist across threads; thread content does not
-- Personal memories apply in standard Sierra threads; inside a workspace, workspace memories replace them — personal memories do not carry over into workspaces and vice versa
-- This is the mental model behind all of Sierra's features — workspaces, memories, and retrieval tools all exist to put the right information in front of the model automatically
+**Day 11: Context Engineering**
+- The context window is everything the model processes at once — prompt, thread history, tool responses, system prompt, memories, workspace instructions
+- Left side (per-thread): prompt, thread history, past tool responses
+- Right side (persistent, automatic): system prompt, memories, style, user info
+- Top (workspace-level): workspace instructions — shared context that applies across threads in that workspace
+- Context shifts depending on where you're working — in a workspace, workspace-level instructions and shared context shape every thread automatically
+- Context engineering = being deliberate about what fills that window; prompting controls the left side, memories and workspaces engineer the right, RAG fills it with retrieved knowledge
 
-**Day 12: How Sierra Retrieves Information (RAG)**
-- RAG in practice: your query → semantic search → relevant chunks retrieved → added to context → model responds
-- The model only reasons over what gets retrieved — not the entire knowledge base
-- Specific queries = better retrieval = better answers (same principle as Day 9 prompting)
-- RAG is the mechanism behind file uploads, workspace files, Plato, and other knowledge tools — same pipeline, different sources
+**Day 12: Working with Files — Part 1**
+- Sierra does not read the whole file into the chat — it extracts text, indexes it in retrievable sections, and retrieves the most relevant passages based on your query
+- Specific questions get better results — retrieval is query-driven, not whole-document
+- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents tend to extract more reliably; extraction capabilities are actively improving
+- Thread attachments are temporary and isolated; workspace files are persistent and shared across all users
 
-**Day 13: Working with Files — Part 1**
-- Uploading documents into a thread: Sierra converts to text → chunks → vector store → retrieves via RAG (Day 12 pipeline applied)
-- File-friendly formats: text-based PDFs, Word, Excel — structured, selectable text works best
-- File-unfriendly: scanned documents, image-heavy PDFs, complex nested tables — extraction quality drops significantly
-- Thread attachments vs. workspace files: isolated to one thread vs. persistent and shared — know which to use when
+**Day 13: Working with Files — Part 2**
+- Getting structured output: summaries, extracted data, reformatted content, comparisons
+- Give Sierra a template — paste an example of what you want and ask it to match the structure
+- Ask targeted questions rather than "summarize everything" — specific asks surface specific content
+- Sierra gives you content to work with, not finished deliverables — apply final formatting, branding, and production in your document tools
+- Capabilities are actively expanding; the constant habit is: direct the output, then shape it into the final form yourself
 
 ---
 
 ### WEEK 4 (April 21-25): Knowledge Systems & Tools
 *5 days: Monday - Friday*
 
-**Day 14: Working with Files — Part 2**
-- Getting structured output from files: summaries, extracted data, reformatted content, comparisons
-- If output format matters, give Sierra a template — paste an example and ask it to match the structure
-- LLM cleanup: Sierra can reformat and fix messy text extracted from converted or scanned documents
-- What Sierra cannot do: produce formatted Word/PDF files, retain brand styling, generate charts, pixel-perfect output
-- Practical habit: Sierra gives you the content — you apply the final formatting in Word or PowerPoint
+**Day 14: Workspaces — Part 1**
+- A workspace is a shared environment where threads can access common instructions, context, and files — configure once, work in that workspace benefits from it
+- Workspace Context: standing guidance and background knowledge that applies across threads in the workspace
+- Workspace Memories: durable shared information available to all threads and users without retrieval
+- Workspace Files: searchable knowledge sources available across threads — mention file names in prompts to improve retrieval
+- Context works differently depending on where you are — in a workspace, shared workspace-level context shapes every thread automatically
 
-**Day 15: Workspaces — Part 1**
-- A workspace is a persistent, shared context environment for teams — set it up once, every thread inherits it
-- Settings: manage which users have access to the workspace
-- Workspace Context: written into the system prompt for every thread — purpose, standards, definitions, standing instructions; always-on, applies universally
-- Workspace Memories: shared memories injected into every thread via the system prompt — no retrieval needed; used for shared project context, team preferences, and workspace-specific standards; accessible to all users in the workspace
-- Workspace Files: documents loaded via RAG, searchable by any thread and any user — explicitly mention file names in prompts to improve retrieval
-- Key distinction: personal memories do not apply inside workspaces; workspace memories do not carry over to regular Sierra chats — they are separate systems
-- Context is for general background; specific repeatable activities belong in Task Modes, not here
-
-**Day 16: Workspaces — Part 2**
+**Day 15: Workspaces — Part 2**
 - Task Modes: reusable step-by-step instructions for specific, repeatable workflows — invoked by users when needed
 - What a Task Mode can include: steps, which workspace files to reference, which tools to activate, output format requirements
 - Rule of thumb: general background → Workspace Context / specific repeatable activity → Task Mode
-- Sierra follows the defined workflow consistently every time a Task Mode is invoked
+- Task Modes help Sierra follow a more consistent workflow for repeatable tasks
 - Real examples: survey report review, client summary generation, compliance assessment, meeting notes
 
-**Day 17: Plato & eCFR — ABS & Regulatory Knowledge Bases — Part 1**
-- Plato is ABS's internal knowledge base — procedures, standards, technical guidance, company-specific reference material *(currently in preview; may not be available to all users yet)*
-- eCFR (Electronic Code of Federal Regulations) is a curated index of US federal regulations — 46 CFR (shipping), 33 CFR (Coast Guard), and others directly relevant to ABS work *(also in preview)*
-- Both work via RAG (same pipeline as Days 12-13) — Sierra searches and retrieves relevant chunks to reason over
-- When to use Plato: ABS procedures, technical standards, compliance guidance, anything internal and authoritative
-- When to use eCFR: US federal maritime and safety regulations, CFR cross-references, regulatory research
-- Specific queries get better retrieval — same principle applies to both
+**Day 16: Plato — Sierra's Maritime Research Mode**
+- Plato is a specialized Sierra mode for maritime rules and regulatory research — not a general knowledge base *(in preview; may not be available to all users)*
+- Built for surveyors, engineers, and auditors researching Class rules, IMO compliance, and survey procedures
+- Knowledge sources *(expanding as Plato develops):* ABS Rules & Guides, IMO/IACS publications (partial), ABS internal survey procedures and job aids, and eCFR (Titles 33 and 46)
+- Plato shows its reasoning and says when content isn't indexed rather than guessing
 
-**Day 18: Plato & eCFR — Part 2**
-- Writing better queries for both: use specific rule numbers, procedure names, document titles, regulatory citations — vague = poor retrieval
-- Combining Plato or eCFR with file uploads: attach a project document and ask Sierra to cross-reference against ABS standards or federal regulations
-- For compliance work: check whether a process or approach aligns with a specific ABS standard or CFR requirement
-- Plato and eCFR have limits — if Sierra can't find something, it will say so; that's the system working correctly
-- Workflow tip: Plato + eCFR + files + a focused prompt covers both internal standards and external regulatory requirements in a single thread
+**Day 17: Using Plato Effectively**
+- Be specific: state vessel type, rule set reference, Part/Chapter, or survey stage — vague queries produce vague results
+- Search rule first, then procedure: find the Class requirement first, then search ETQ for the corresponding survey procedure or job aid
+- Plato is honest about gaps — if content isn't indexed, verify through official sources or consult an ABS SME
+- Combine with file uploads: attach a project document, ask Plato to cross-reference against applicable Class rules or regulations
+- Outside Plato mode: standalone eCFR tool in main Sierra chat handles quick regulatory lookups without entering Plato
+
+**Day 18: SkillShare & HR Tools**
+- SkillShare: Sierra can search ABS Group's expertise directory — use when you need a human expert, not just an AI answer *(ABS Group employees only)*
+- HR Tool: Sierra has access to ABS HR knowledge — policies, benefits, procedures, specific to company and country
+- Both are retrieval tools — same pipeline as Plato and workspace files, different knowledge source
+- SkillShare is for finding people; HR is for finding policy
 
 ---
 
 ### WEEK 5 (April 28 - May 1): Putting It Together
 *4 days: Monday - Thursday*
 
-**Day 19: SkillShare & HR Tools**
-- SkillShare: Sierra can search ABS Group's skillset and resume database — use it when you need a human expert, not just an AI answer *(ABS Group employees only; not available to Bureau or Wavesight by default)*
-- HR Tool: Sierra has access to ABS HR knowledge — policies, benefits, procedures, specific to company (Bureau/Group/Wavesight) and country — ask naturally, it retrieves accurately
-- Both are retrieval tools — same RAG pipeline as Plato and workspace files, different knowledge source
-- SkillShare is for finding people; HR is for finding policy — know which one to reach for
-
-**Day 20: Real Workflow — Writing & Document Work**
+**Day 19: Real Workflow — Writing & Document Work**
 - End-to-end walkthrough: upload the file → set context → prompt with a specific ask → refine output
 - Use workspace context or memories so Sierra already knows your audience, standards, and style
 - Use a Task Mode for repeatable document tasks — review process, summary format, client deliverable template
 - Always review outputs before sending — Sierra is your first draft engine, not your final editor
 
-**Day 21: Real Workflow — Research & Analysis**
-- End-to-end walkthrough: Plato for internal standards → web search for current external info → files for project specifics → synthesize
-- Ask Sierra to cite sources and explain its reasoning — easier to verify and spot hallucinations
-- Hallucinations are most likely near the edges: obscure topics, recent events, highly specific technical details — always cross-check these
+**Day 20: Real Workflow — Research & Analysis**
+- End-to-end walkthrough: a typical research stack — Plato for ABS rules → eCFR for federal regulations → web search for current external info → files for project specifics → synthesize; use the tools available and relevant, not all at once
+- Ask Sierra to cite sources, state its assumptions, and flag what may need verification — makes gaps and errors easier to spot
+- Hallucinations are most likely near the edges: obscure topics, recent events, highly specific technical details — always cross-check against authoritative sources
 - Build a repeatable research workflow in a workspace: load relevant files, set context, create a Task Mode for the research process
 
-**Day 22: What You Now Know — Wrap-Up & Certification Prep**
+**Day 21: What You Now Know — Wrap-Up & Certification Prep**
 - The mental model you've built: model limits → context → retrieval (RAG) → prompting → workspaces → full workflows
 - The habits that matter: focused threads, specific queries, provide context before you prompt, verify before you send
 - Common mistakes to avoid going forward

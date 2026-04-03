@@ -5,31 +5,11 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 19: SkillShare & HR Tools*
+*Day 19: Real Workflow — Writing & Document Work*
 
 ---
 
-**Day 19: SkillShare & HR Tools**
-
-- **SkillShare:** Sierra can search ABS's internal expertise directory — use it when you need to find a human expert, not just an AI answer
-- **HR Tool:** Sierra has access to ABS HR knowledge — policies, benefits, procedures — ask naturally, it retrieves accurately
-- Both are retrieval tools — same RAG model as Plato and workspace files, different knowledge source
-- SkillShare is for finding people; HR is for finding policy — know which one to reach for
-- These tools extend what Sierra knows about ABS, they don't replace your own judgment or relationships
-
-[Visual: Three-panel row — PLATO (ABS standards/technical), SKILLSHARE (ABS people/expertise), HR TOOL (ABS policies/benefits). Each panel has a short "Best for:" label and a simple icon. Header above all three: "ABS-Specific Retrieval Tools." Reinforces the Day 12 RAG model — same engine, different knowledge sources.]
-
-**ABS & Affiliated Companies**
-
----
-
-**ABS & Affiliated Companies**
-**SIERRA Literacy Month**
-*Day 20: Real Workflow — Writing & Document Work*
-
----
-
-**Day 20: Real Workflow — Writing & Document Work**
+**Day 19: Real Workflow — Writing & Document Work**
 
 - The full stack for document work: upload the file → set context → prompt with a specific ask → refine output
 - Use workspace context or memories so Sierra already knows your audience, standards, and style
@@ -45,15 +25,15 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 21: Real Workflow — Research & Analysis*
+*Day 20: Real Workflow — Research & Analysis*
 
 ---
 
-**Day 21: Real Workflow — Research & Analysis**
+**Day 20: Real Workflow — Research & Analysis**
 
-- The full stack for research: Plato for internal standards → web search for current external info → files for project specifics → synthesize
-- Ask Sierra to cite sources and explain its reasoning — easier to verify and spot hallucinations
-- Hallucinations are most likely near the edges: obscure topics, recent events, highly specific technical details — always cross-check these
+- A typical research stack: Plato for ABS rules and maritime regulations → eCFR for US federal regulations → web search for current external info → files for project specifics → synthesize — use the tools that are available and relevant, not all at once
+- Ask Sierra to cite sources, state its assumptions, and flag what may need verification — makes gaps and errors easier to spot
+- Hallucinations are most likely near the edges: obscure topics, recent events, highly specific technical details — always cross-check these against authoritative sources
 - Build a repeatable research workflow in a workspace: load relevant files, set context, create a Task Mode for the research process
 - Sierra synthesizes faster than you can read — your job is to direct and validate, not just accept
 
@@ -65,11 +45,11 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 22: What You Now Know*
+*Day 21: What You Now Know*
 
 ---
 
-**Day 22: What You Now Know**
+**Day 21: What You Now Know**
 
 - You understand what Sierra is, how it works, and why it's the right tool for ABS work
 - You know the mental model: model limits → context → retrieval (RAG) → prompting → workspaces → full workflows
