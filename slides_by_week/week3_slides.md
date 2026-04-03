@@ -11,15 +11,22 @@
 
 **Day 9: Prompting Fundamentals**
 
-- A prompt is everything you send Sierra — the more intentional, the better the output
-- Four ingredients of a strong prompt: **Role · Task · Context · Format**
 - Vague in = vague out — specificity is the single biggest lever you have
-- Prompting is iterative — one exchange rarely gets you there; refine and build
+- Four ingredients of a strong prompt:
+  - **Role** — tell Sierra what it is: *"You are a technical reviewer..."*
+  - **Task** — say exactly what you want: summarize, draft, compare, extract, rewrite
+  - **Context** — give it the raw material: paste the document, describe the project, name the client
+  - **Format** — tell it how to respond: bullet list, executive summary, table, plain language
 
 > **Weak:** "Summarize this report."
-> **Strong:** "You are reviewing a marine survey report. Summarize the top 3 findings in plain language for a non-technical client."
+> **Strong:** "You are reviewing a marine survey report. Summarize the top 3 findings in plain language for a non-technical client. Use bullet points."
 
-[Visual: Two-column comparison — left column "Vague" (red/orange), right column "Specific" (blue/green). Below both: four labeled blocks in a row — ROLE | TASK | CONTEXT | FORMAT — each with a one-line description. Clean, minimal layout.]
+**Your first prompt is a starting point, not a final answer.**
+- When Sierra misses: tell it what was wrong and add what it was missing — *"Too long, cut to 3 bullets"* / *"Here's an example of what I actually want: [paste it]"*
+- When a thread has gone sideways: start fresh with a better prompt — don't fight a bad thread
+- Don't know how to prompt it? Ask Sierra: *"I need to [rough description]. Write me a clean prompt I can use."*
+
+[Visual: Two-column comparison — Vague vs. Specific example. Below: four labeled blocks — ROLE | TASK | CONTEXT | FORMAT — each with a one-line example. Bottom callout: "First prompt = starting point. Refine until it's right."]
 
 **ABS & Affiliated Companies**
 
@@ -31,16 +38,24 @@
 
 ---
 
-**Day 10: Advanced Prompting Techniques**
+**Day 10: Controlling How Sierra Thinks**
 
-- Voice-to-text: speak your prompt — faster, more natural, often more detailed
-- Meta-prompting: ask Sierra to rewrite your rough idea as a clean, reusable prompt
-- Know when to continue vs. start fresh — scattered threads produce scattered answers
-- Iterative loop: prompt → review output → refine the ask → repeat
+**Chain of thought — ask Sierra to reason before it concludes**
+- Add *"think through this step by step"* or *"walk me through your reasoning before giving an answer"*
+- Forces the model to show its work — more accurate on complex problems, easier to spot where it went wrong
+- ABS example: *"Walk through whether this vessel configuration meets each relevant SOLAS requirement before giving your conclusion."*
 
-> **Meta-prompt example:** *"Summarize what I've been asking you to do as a clear, specific prompt I could reuse next time."*
+**Task decomposition — break complex asks into steps**
+- One massive prompt on a complex task = one shot at getting it right
+- Sequential prompts = each step is reviewable before the next
+- ABS example: Step 1: *"Extract the key findings from this survey data."* → Step 2: *"Rank by severity and client impact."* → Step 3: *"Write an executive summary for a non-technical client covering the top 3."*
 
-[Visual: A circular loop diagram — four nodes connected by arrows: PROMPT → REVIEW → REFINE → REPEAT → back to PROMPT. Separate callout box to the side: meta-prompt concept shown as "You → Sierra → Better Prompt → You."]
+**Guide the reasoning — be explicit about approach**
+- *"Be conservative — flag any uncertainty rather than assuming compliance"*
+- *"Consider both the technical requirements and the client relationship before recommending"*
+- *"Approach this as a senior ABS surveyor reviewing for class renewal"*
+
+[Visual: Three labeled sections — CHAIN OF THOUGHT / TASK DECOMPOSITION / GUIDE THE REASONING — each with a one-line ABS example. Connecting theme at bottom: "You're not just telling Sierra what to produce — you're directing how it thinks."]
 
 **ABS & Affiliated Companies**
 

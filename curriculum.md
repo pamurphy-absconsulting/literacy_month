@@ -72,16 +72,17 @@
 *5 days: Monday - Friday*
 
 **Day 9: Prompting Fundamentals**
-- What makes a prompt strong: role, task, context, format
-- Specific vs. vague — the single biggest lever you have
-- Prompting is iterative — one exchange rarely gets you there; refine and build
-- Bad vs. good prompt examples in an ABS context
+- Vague in = vague out — specificity is the single biggest lever
+- Four ingredients: Role (what Sierra is), Task (what you want), Context (the raw material), Format (how to respond)
+- Your first prompt is a starting point — when Sierra misses, tell it what was wrong and add what it was missing
+- When a thread goes sideways, start fresh — don't fight it
+- Meta-prompt shortcut: ask Sierra to write the prompt for you from a rough description
 
-**Day 10: Advanced Prompting Techniques**
-- Voice-to-text: speak your prompt — faster, more natural, often more detailed
-- Meta-prompting: ask Sierra to rewrite your rough idea as a clean, reusable prompt
-- Know when to continue a thread vs. start fresh — scattered threads produce scattered answers
-- Iterative loop: prompt → review output → refine the ask → repeat
+**Day 10: Controlling How Sierra Thinks**
+- Chain of thought: ask Sierra to reason step by step before concluding — more accurate on complex problems, easier to audit
+- Task decomposition: break complex asks into sequential steps — each step is reviewable before the next
+- Guide the reasoning: be explicit about approach and constraints — *"be conservative, flag uncertainty"* / *"consider both technical and commercial implications"*
+- You're not just telling Sierra what to produce — you're directing how it thinks
 
 **Day 11: The Context Window — What Sierra Sees**
 - The LLM only processes what's in its context window at the moment of each response
