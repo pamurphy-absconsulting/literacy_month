@@ -1,6 +1,6 @@
 # SIERRA Literacy Month — Week 2 Slides
 ## Days 4–8: AI Fundamentals
-*Already recorded and delivered. Do not modify unless course requires serious reorganization.*
+*Days 4, 5, 8 locked. Days 6 and 7 being re-recorded.*
 
 ---
 
@@ -28,7 +28,7 @@
 
 **Rule of thumb: if it was never on the public internet, it is not in the model's internal knowledge.**
 
-**Everything ABS-specific must come from you — through context.**
+**All non-public data must come from you — through context.**
 
 **ABS & Affiliated Companies**
 
@@ -48,13 +48,12 @@
 Nothing exists outside these two. Internal knowledge is outside your control. Context is not.]
 
 **Core Ideas**
-- Two and only two sources: internal knowledge (fixed, comes with the model) and context (what you provide)
-- **Context is the lever you control** — internal knowledge is set; context isn't
+- The model reasons over the information you provide using its internal patterns (reasoning)
+- **Context is the lever you control** — internal knowledge is set; context is not
 - Context includes: what you type in your prompt, files you attach, and the conversation history
-- The model works with both simultaneously — your context shapes what it reasons over
 - Sierra cannot help with ABS-specific work unless you provide ABS-specific context
 
-**Your job as a Sierra user: load up the context with what the model can't know on its own.**
+**Your job as a SIERRA user: load up the context with what the model can't know on its own.**
 
 **ABS & Affiliated Companies**
 
@@ -62,26 +61,24 @@ Nothing exists outside these two. Internal knowledge is outside your control. Co
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 6: How Sierra Bridges the Gap*
+*Day 6: SIERRA's Tools for Adding Context*
 
 ---
 
-**Day 6: How Sierra Bridges the Gap**
+**Day 6: SIERRA's Tools for Adding Context**
 
-[Diagram: Three-step flow.
-1. **You ask** — an ABS-specific question Sierra can't know internally
-2. **Sierra retrieves** — searches a curated ABS-built knowledge system for relevant content
-3. **Sierra answers** — retrieved content enters the context; Sierra reasons over it and responds]
+| Tool | What it does |
+|---|---|
+| **File Attachments** | SIERRA converts, reads, and brings information in from documents you provide |
+| **Web Search** | Targeted queries to bring more current or additional information into context |
+| **Knowledge Repositories** | Curated ABS-specific data sets that SIERRA can query automatically |
+
+**Example:** Ask SIERRA about ABS vacation policy. SIERRA retrieves info from an ABS-built knowledge repo, reasons over it, and responds.
 
 **Core Ideas**
-- **LLMs are static** — parameters are set at training and never change. The model does not learn, adapt, or evolve as you use it.
-- **Sierra does not learn from your conversations** — your chats do not modify the model in any way
-- ABS does NOT train its own LLMs — too expensive, and a trained model is still static
-- So how does Sierra know ABS-specific things? **We build knowledge systems** — curated repositories Sierra can search and retrieve from on demand
-
-**Example:** Ask Sierra about ABS vacation policy. It doesn't know the answer internally — it retrieves it from an HR knowledge base ABS built, reasons over it, and responds. As policy changes, ABS updates the knowledge system. The model never needs to be retrained.
-
-**Sierra's knowledge of ABS comes from systems we build and maintain — not from what it was trained on. More on how this works in Week 3.**
+- SIERRA is not a model — it provides secure access to frontier models with additional tools
+- These tools bring in information the models don't already have
+- The additional information enters the context window and the model reasons over it to produce output
 
 **ABS & Affiliated Companies**
 
@@ -89,30 +86,24 @@ Nothing exists outside these two. Internal knowledge is outside your control. Co
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 7: Tokens, Cost & Context Window*
+*Day 7: Tokens & Context Windows*
 
 ---
 
-**Day 7: Tokens, Cost & Context Window**
+**Day 7: Tokens & Context Windows**
 
-- Tokens are small pieces of text — words, parts of words, punctuation (~4 characters, ~0.75 words; about 666 tokens per page)
-- Every LLM request is priced on tokens processed — both input and output; tokens are inexpensive, ABS absorbs significant usage
-- Models reprocess the entire conversation history with each message
-- Long, scattered threads degrade answer quality — the model has to sort through noise to find what matters
-- Focused threads = better answers. Cost savings is a secondary benefit.
+**Why can't we simply make ALL information available to the model?**
 
-**About tokens...**
-Language models break text into smaller chunks (tokens) before processing it.
-- Example: "language models" → [**Lan**][**guage**][**_mod**][**els**]
-- One page ≈ 666 tokens
-
-**Context window = working memory**
-Think of the context window as the model's working memory — everything it can hold in mind at once while generating a response. Every token in your thread (prompts, responses, attached files, system instructions) counts against it.
-- Current Sierra models: 200,000 to 2,000,000 tokens (~300 to 3,000 pages)
-- A focused thread keeps working memory on what matters — a noisy thread wastes it on what doesn't
-- *(We'll go deeper on what fills the context window in Week 3)*
-
-**When switching topics, start a new thread — primarily for better answers, and secondarily to keep costs down.**
+**The Constraint in Practice**
+- The model can only process so much information at once — this is called its context window
+- Context window = working memory = max processing load
+- This constraint is measured in tokens
+- Tokens are chunks of text — each one is processed as a mathematical representation of language
+- Roughly 666 tokens per page of text
+- Large, but not infinite
+- Focused threads = better answers
+- Noise degrades quality: long, scattered threads force the model to sift through everything in its window to find what matters
+- Long conversations with huge amounts of information (via upload or retrieval) will push earlier content out
 
 **ABS & Affiliated Companies**
 
@@ -129,16 +120,8 @@ Think of the context window as the model's working memory — everything it can 
 **Core Ideas**
 - A "hallucination" is a confident, fluent output not grounded in truth.
 - Models are trained to produce the most probable continuation of text, not necessarily the most truthful continuation.
-- This often occurs with insufficient context — it fills a gap based on patterns, not real data.
-- This is why much of our focus is on building internal knowledge systems.
-
-**Also watch for:**
-- **Out-of-date responses** — Sierra can't know about events after its training cutoff; verify anything time-sensitive
-- **Irrelevant responses** — if Sierra misses the point, it usually means more context is needed, not a smarter question
-
-**Always review Sierra outputs before sending to clients — fluent does not mean accurate.**
-
-[Diagram: Smiling face with star-shaped eyes inside a yellow circle, flanked by a blue input arrow on the left and an orange output arrow with an exclamation mark on the right.]
+- This often occurs with insufficient context and edges of training data where it's filling a gap based on patterns but not on real data.
+- This is why much of our focus is on building internal knowledge systems and why you should always verify outputs.
 
 **ABS & Affiliated Companies**
 

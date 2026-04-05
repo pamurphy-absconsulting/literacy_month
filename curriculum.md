@@ -42,21 +42,20 @@
 - The model works with both simultaneously — context shapes what it reasons over
 - Goal: load up context with what the model can't know on its own
 
-**Day 6: How Sierra Bridges the Gap**
-- LLMs are static — parameters set at training, never change, never learn from conversations
-- Sierra does not learn from your conversations — your chats do not modify the model in any way
-- ABS does NOT train its own LLMs — too expensive, and a trained model is still static
-- Solution: ABS builds knowledge systems — curated repositories Sierra retrieves from on demand
-- Example: HR vacation policy — Sierra doesn't know it internally; it retrieves from an ABS-built knowledge base
-- As ABS evolves, we update knowledge systems — not the model
+**Day 6: SIERRA's Tools for Adding Context**
+- Sierra is not a model — it's a platform with secure access to various LLMs and a set of tools built around them
+- The models were trained on public data; ABS-specific work — projects, rules, client data, procedures — is not in there by default
+- Sierra has three tools to bring in what the model doesn't know: web search (current/external info), file attachments (documents you upload), and knowledge repositories (CoE-built data sets Sierra searches automatically)
+- Example: HR vacation policy — the model has no idea; Sierra retrieves it from an ABS-built knowledge repository and responds correctly
+- In all three cases, the model only processes what's in its context window — these tools exist to make sure the right information gets there
 
-**Day 7: Tokens, Cost & Context Window**
-- Tokens are small pieces of text: words, parts of words, punctuation (~4 characters, ~0.75 words; about 666 tokens per page)
-- Every LLM request is priced on tokens processed — both input and output; tokens are cheap, ABS absorbs significant usage
-- Models reprocess the entire conversation history with each message — long, noisy threads degrade output quality
-- Context window = working memory: everything the model can hold in mind at once while responding
-- Current Sierra models: 200,000 to 2,000,000 tokens (~300–3,000 pages); focused threads keep that memory on what matters
-- Starting a new thread when switching topics is primarily about quality, secondarily about cost
+**Day 7: Tokens & Context Windows**
+- The model only processes what's in its context window — nothing from other threads, nothing not explicitly provided or retrieved
+- Context window = working memory: everything the model can hold and process at once — large, but not infinite
+- Tokens are the unit of measurement: roughly 666 tokens per page
+- The quality constraint: the model processes everything in the window on every message — irrelevant content degrades output quality, not just efficiency
+- Focused threads get better results: start a new chat when switching topics, keep threads tight and on one subject
+- Failure mode: long conversations push earlier context out of the window — the model loses information it once had; that sets up Day 8
 
 **Day 8: What Is a Hallucination?**
 - A hallucination is a confident, fluent output not grounded in truth
@@ -73,38 +72,37 @@
 
 **Day 9: Prompting Fundamentals**
 - Vague in = vague out — specificity is the single biggest lever
-- Four ingredients: Role (what Sierra is), Task (what you want), Context (the raw material), Format (how to respond)
+- Four ingredients: Role (the angle of approach — "you are a technical reviewer"), Task (explicit instruction on what to do), Context (background information and raw material), Format (how to structure the output)
 - Your first prompt is a starting point — when Sierra misses, tell it what was wrong and add what it was missing
 - When a thread goes sideways, start fresh — don't fight it
 - Meta-prompt shortcut: ask Sierra to write the prompt for you from a rough description
 
 **Day 10: Structuring Complex Tasks**
-- You are the SME — Sierra does not know your process, project, or professional judgment; your job is to explain the reasoning sequence a competent person would follow
-- Give it a reasoning sequence, not just a question: specify structure — criteria, assessment, uncertainty, conclusion — makes responses easier to review and push back on
-- Break it into steps the way you'd brief a junior analyst: sequential prompts let you review each step before the next
-- Tell it what a senior person would watch out for: be explicit about evaluation criteria, constraints, and where to flag uncertainty
-- You're not just asking for output — you're directing how Sierra thinks through the problem
+- You are the SME — Sierra does not know your process, project, client, or professional judgment; your job is to direct it, not hope it figures it out
+- Don't throw a complex problem at it all at once — break it into sequential steps and guide it through
+- One big prompt = one shot; sequential steps = you review each output before the next starts, catching errors early
+- You decide the sequence and what good output looks like at each stage
+- Once a workflow is dialed in, ask Sierra to build a reusable prompt from the conversation history — save it as a starting point for next time
 
-**Day 11: Context Engineering**
-- The context window is everything the model processes at once — prompt, thread history, tool responses, system prompt, memories, workspace instructions
-- Left side (per-thread): prompt, thread history, past tool responses
-- Right side (persistent, automatic): system prompt, memories, style, user info
-- Top (workspace-level): workspace instructions — shared context that applies across threads in that workspace
-- Context shifts depending on where you're working — in a workspace, workspace-level instructions and shared context shape every thread automatically
-- Context engineering = being deliberate about what fills that window; prompting controls the left side, memories and workspaces engineer the right, RAG fills it with retrieved knowledge
+**Day 11: Memories & Customization**
+- Memories are persistent context that carry into every thread automatically — no retyping required
+- What to put in them: role and specialization, typical audience, response preferences, team/group context
+- Personal memories follow you across all standard threads; workspace memories are shared across a team
+- Set memories once, stop repeating yourself every thread — the response improves before you type a word
 
 **Day 12: Working with Files — Part 1**
 - Sierra does not read the whole file into the chat — it extracts text, indexes it in retrievable sections, and retrieves the most relevant passages based on your query
-- Specific questions get better results — retrieval is query-driven, not whole-document
-- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents tend to extract more reliably; extraction capabilities are actively improving
+- Your query drives what gets retrieved — vague questions surface vague content; specific questions surface specific content
+- Reference sections, topics, or names directly to improve retrieval; if Sierra misses something, restate with more specificity or quote a term from the document
+- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents retrieve more reliably
 - Thread attachments are temporary and isolated; workspace files are persistent and shared across all users
 
 **Day 13: Working with Files — Part 2**
-- Getting structured output: summaries, extracted data, reformatted content, comparisons
-- Give Sierra a template — paste an example of what you want and ask it to match the structure
-- Ask targeted questions rather than "summarize everything" — specific asks surface specific content
-- Sierra gives you content to work with, not finished deliverables — apply final formatting, branding, and production in your document tools
-- Capabilities are actively expanding; the constant habit is: direct the output, then shape it into the final form yourself
+- Getting structured output: give Sierra a template — paste an example and say "match this structure"; don't describe format in the abstract when you can show it
+- Break it into steps: extract first, then rank, then write — don't ask for the finished deliverable in one shot
+- Be explicit about audience and purpose; ask it to flag uncertainty and assumptions
+- If the first output misses: tell it what was wrong rather than starting over — point it back to the specific section
+- Sierra gives you content to work with, not finished deliverables — direct the output, then shape it into final form yourself
 
 ---
 
@@ -112,11 +110,11 @@
 *5 days: Monday - Friday*
 
 **Day 14: Workspaces — Part 1**
-- A workspace is a shared environment where threads can access common instructions, context, and files — configure once, work in that workspace benefits from it
-- Workspace Context: standing guidance and background knowledge that applies across threads in the workspace
+- Context engineering: every response is shaped by more than your prompt — prompt, thread history, memories, workspace instructions, and retrieved knowledge all feed into what the model sees; workspaces are how you engineer the persistent, shared side of that at a team level
+- A workspace is a shared environment where threads can access common instructions, context, and files — configure once, every thread in that workspace benefits
+- Workspace Context: standing guidance and background knowledge that applies across all threads in the workspace
 - Workspace Memories: durable shared information available to all threads and users without retrieval
 - Workspace Files: searchable knowledge sources available across threads — mention file names in prompts to improve retrieval
-- Context works differently depending on where you are — in a workspace, shared workspace-level context shapes every thread automatically
 
 **Day 15: Workspaces — Part 2**
 - Task Modes: reusable step-by-step instructions for specific, repeatable workflows — invoked by users when needed

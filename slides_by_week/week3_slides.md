@@ -13,20 +13,20 @@
 
 - Vague in = vague out — specificity is the single biggest lever you have
 - Four ingredients of a strong prompt:
-  - **Role** — tell Sierra what perspective to take: *"You are acting as a technical reviewer..."*
-  - **Task** — say exactly what you want: summarize, draft, compare, extract, rewrite
-  - **Context** — give it the raw material: paste the document, describe the project, name the client
+  - **Role** — tell Sierra what it is: *"You are a technical reviewer..."*
+  - **Tasks** — say exactly what you want: summarize, draft, compare, extract, rewrite
+  - **Context** — give it raw material: paste the document, describe the project, name the client
   - **Format** — tell it how to respond: bullet list, executive summary, table, plain language
 
 > **Weak:** "Summarize this report."
 > **Strong:** "You are reviewing a marine survey report. Summarize the top 3 findings in plain language for a non-technical client. Use bullet points."
 
 **Your first prompt is a starting point, not a final answer.**
-- When Sierra misses: tell it what was wrong and add what it was missing — *"Too long, cut to 3 bullets"* / *"Here's an example of what I actually want: [paste it]"*
-- When a thread has gone sideways: start fresh with a better prompt — don't fight a bad thread
-- Don't know how to prompt it? Ask Sierra: *"I need to [rough description]. Write me a clean prompt I can use."*
+- When Sierra misses: tell it what was wrong and add what it was missing with example
+- When a thread has gone sideways: start fresh in a new thread
+- Don't know how to prompt it? Ask Sierra! *"I need to [rough description]. Write me a clean prompt I can use."*
 
-[Visual: Two-column comparison — Vague vs. Specific example. Below: four labeled blocks — ROLE | TASK | CONTEXT | FORMAT — each with a one-line example. Bottom callout: "First prompt = starting point. Refine until it's right."]
+[Visual: Four labeled blocks — ROLE | TASKS | CONTEXT | FORMAT — each with a one-line example. Weak vs. Strong comparison. Bottom: "Your first prompt is a starting point, not a final answer."]
 
 **ABS & Affiliated Companies**
 
@@ -40,27 +40,24 @@
 
 **Day 10: Structuring Complex Tasks**
 
-**You are the SME. The model is not.**
-- Sierra does not know your process, your project, your client, or your professional judgment — you do
-- Its reasoning is only as good as the direction you give it
-- On complex tasks, your job is to explain how a competent person would think through this problem — then let Sierra execute that sequence
+**You are the expert | You architect, SIERRA executes**
 
-**Give it a reasoning sequence, not just a question**
-- Specify the structure: criteria → assessment → uncertainty → conclusion
-- This keeps the output reviewable and gives you something concrete to push back on
-- ABS example: *"Assess this vessel configuration against the relevant SOLAS requirements. For each requirement, state: the requirement, whether it appears met, any uncertainty, and recommended follow-up. Then give a final conclusion."*
+**YOU ARE THE SME**
+- The models lack big picture thinking and cannot grasp full architecture of your problem without explicit instruction.
+- SIERRA does not know your process, your project, your systems. Nor does it have your professional judgement.
+- Your job is ultimately to provide the information it needs and communicate the steps for it to take.
 
-**Break it into steps the way you'd brief a junior analyst**
+**GUIDE THE PROCESS**
+Break it into steps the way you'd brief an intern.
 - One massive prompt = one shot at getting it right
-- Sequential steps = each one is reviewable before the next
-- ABS example: Step 1: *"Extract the key findings from this survey data."* → Step 2: *"Rank by severity and client impact."* → Step 3: *"Write an executive summary for a non-technical client covering the top 3."*
+- Sequential steps = review each before the next
 
-**Tell it what a senior person would watch out for**
-- *"Be conservative — flag any uncertainty rather than assuming compliance"*
-- *"Consider both the technical requirements and the client communication risk"*
-- *"Use the perspective of a senior ABS reviewer — flag what needs human verification"*
+ABS example:
+- Step 1: *"Extract the key findings from this survey data."*
+- Step 2: *"Rank by severity and client impact."*
+- Step 3: *"Write an executive summary for a non-technical client covering the top 3."*
 
-[Visual: Three labeled sections — REASONING SEQUENCE / STEP-BY-STEP / GUIDE THE APPROACH — each with an ABS example. Header callout: "You are the SME. Sierra follows the reasoning you give it." Bottom: "You're not just telling Sierra what to produce — you're directing how it thinks through the problem."]
+[Visual: Two-column layout — YOU ARE THE SME (left) | GUIDE THE PROCESS (right). Header: "You are the expert | You architect, SIERRA executes."]
 
 **ABS & Affiliated Companies**
 
@@ -72,19 +69,32 @@
 
 ---
 
-**Day 11: Context Engineering**
+**Day 11: Memories & Customization**
 
-[Visual: Context Engineering diagram — prompt + thread history + past tool responses flow in from the left; system prompt + memories + style + user info flow in from the right; workspace instructions from the top. All feed into the Large Language Model. Response exits at the bottom.]
+*Opening note: "I mentioned context engineering at the end of last time — we'll get there, but I want to cover something that'll actually make that concept land better when we do."*
 
-- That diagram shows the main inputs that can shape a response — your prompt is one input among many
-- **Left side (you control per thread):** prompt, thread history, past tool responses
-- **Right side (persistent, automatic):** system prompt, memories, style, user info
-- **Top (workspace-level):** workspace instructions — shared context that applies across threads in that workspace
-- Responses may draw on the broader context, not just your latest message — though not every piece of context carries equal weight
-- Context shifts depending on where you're working — in a workspace, workspace-level instructions and shared context shape every thread automatically
-- Context engineering = being deliberate about what's in that window. Prompting controls the left side. Memories and workspaces engineer the right. RAG fills it with retrieved knowledge.
+**Stop re-explaining yourself. Every thread shouldn't start from zero.**
 
-**Sierra isn't a chat box. It's a system you can configure.**
+**What memories do:**
+- Memories are persistent context — they carry into every thread automatically, without you typing them
+- Sierra uses them as background when forming responses
+- The response improves before you type a single word
+
+**What to put in them:**
+Things you'd otherwise repeat at the start of every prompt:
+- Your role and specialization: *"I'm a marine surveyor, primarily hull and machinery"*
+- Your audience: *"I typically write for non-technical clients or port state inspectors"*
+- Your preferences: *"Keep responses concise. Use bullet points by default."*
+- Your team/group context: *"I work in ABS Offshore, primarily MODU and FPSO work"*
+
+**How to set them:**
+Tell Sierra directly — *"Remember that I..."* — or add them in your profile settings.
+
+**Personal vs. Workspace memories:**
+- Personal memories: yours alone — follow you across all your standard threads
+- Workspace memories: shared across a team — covered next week with Workspaces
+
+**Set it once. Stop repeating it every thread.**
 
 **ABS & Affiliated Companies**
 
@@ -92,20 +102,26 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 12: How Sierra Retrieves Information (RAG)*
+*Day 12: Working with Files — Part 1*
 
 ---
 
 **Day 12: Working with Files — Part 1**
 
+**How file retrieval works:**
 - You can upload documents directly into a thread — Sierra does not read the whole file into the chat
-- In simplified terms: Sierra extracts text from the file, indexes it in retrievable sections, and retrieves the most relevant passages based on your query — those passages enter the context window
-- **Specific questions get better results than vague ones** — Sierra retrieves what your query points to, not everything in the file
-- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents tend to extract more reliably than image-heavy or poorly structured ones; extraction capabilities are actively improving
-- Thread attachments are temporary — Sierra does not carry them into new threads
-- Thread attachments vs. workspace files: isolated to one thread vs. persistent and shared across every user in the workspace
+- Sierra extracts text from the file, indexes it in retrievable sections, and retrieves the most relevant passages based on your query — those passages enter the context window
+- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents retrieve more reliably than image-heavy or poorly structured ones
 
-[Visual: File upload flow — FILE → EXTRACT TEXT → INDEX SECTIONS → RETRIEVE (based on query) → CONTEXT WINDOW → RESPONSE. Callout: "Sierra doesn't read the whole file. It retrieves the parts your question points to." Below: "Source quality affects retrieval quality — the clearer the document, the better the extraction."]
+**How to prompt when working with a file:**
+- **Your query drives what gets retrieved** — vague questions surface vague content; specific questions surface specific content
+- Don't ask: *"Summarize this report"* — Ask: *"What are the top findings related to hull condition in section 3?"*
+- Reference sections, topics, or names directly — it helps Sierra retrieve the right chunk
+- If Sierra misses something you know is in the file, restate the question with more specificity or quote a term from the document
+
+**Thread attachments are temporary** — Sierra does not carry them into new threads. For files shared across a team, use workspace files instead.
+
+[Visual: File upload flow — FILE → EXTRACT TEXT → INDEX SECTIONS → RETRIEVE (based on query) → CONTEXT WINDOW → RESPONSE. Callout: "Sierra retrieves what your question points to — ask specifically."]
 
 **ABS & Affiliated Companies**
 
@@ -119,13 +135,21 @@
 
 **Day 13: Working with Files — Part 2**
 
-- Sierra can generate structured output from files: summaries, extracted data, reformatted content, comparisons
-- If output format matters, give Sierra a template — paste an example of what you want and ask it to match the structure
-- Ask targeted questions rather than "summarize everything" — retrieval is query-driven, so specific asks surface specific content
-- Sierra gives you content to work with, not finished deliverables — apply final formatting, branding, and production in your document tools
-- Capabilities here are actively expanding; the habit that stays constant is: direct the output, then shape it into the final form yourself
+**Getting structured output:**
+- Sierra can generate summaries, extracted data, reformatted content, and comparisons from files
+- **Give it a template** — paste an example of the output you want and say *"match this structure"*; don't describe the format in the abstract when you can just show it
+- **Break it into steps** (Day 10 applies here): extract first, then rank, then write — don't ask for the finished deliverable in one shot
 
-[Visual: Before/after diagram. Left: "Messy or Raw Input" (rough text, inconsistent formatting). Center: arrow through "SIERRA + Template." Right: "Clean, Structured Output." Callout below: "Sierra produces the content. You handle the final formatting." Second callout: "Specific question → specific retrieval → better output."]
+**Prompting for output quality:**
+- Be explicit about audience and purpose: *"Write this for a non-technical port state inspector, one page, plain language"*
+- Ask it to flag uncertainty: *"Note any areas where the document was unclear or where you had to make assumptions"*
+- If the first output misses: don't start over — tell it what was wrong: *"Too general — go back to section 4 and pull the specific deficiency findings"*
+
+**What Sierra produces vs. what you finish:**
+- Sierra gives you content to work with, not finished deliverables — apply final formatting, branding, and production in your document tools
+- The habit that stays constant: direct the output, then shape it into the final form yourself
+
+[Visual: Prompt → Output → Refine loop. Callout: "Show it the template. Break it into steps. Tell it what was wrong." Below: "Sierra produces the content. You handle the final form."]
 
 **ABS & Affiliated Companies**
 
