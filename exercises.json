@@ -1,34 +1,132 @@
 [
+
   {
+
     "date": "2026-04-01",
-    "title": "Day 1: What is SIERRA?",
+
+    "title": "Day 1 - What is SIERRA",
+
     "description": "Learn what Sierra is—a secure ABS portal to frontier models in Azure—why it is preferred over public AI for work data, and how the information you provide drives useful answers.",
+
     "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=36a44d7c-6ed2-4d49-8189-332d4614f8e5",
+
     "resourceType": "video",
-    "exerciseMarkdown": "### Exercise\n\nBrowse to https://sierra.absconsulting.com.\n\nIf this is your first time, it will prompt you to accept the Data Policy.\n\nOnce you reach the home page, submit the simple prompt: \"Who are you?\"\n\nReview the output and ask follow up questions related to today's training video or to see what else SIERRA can do.\n\nClick \"Chat\" to start a new message.\n\nAsk for instructions for how to save SIERRA as an app using Microsoft Edge.\n\nThen, we recommend following the instructions."
+
+    "exerciseMarkdown": "### Exercise\n\n1. Browse to https://sierra.absconsulting.com.\n2. If this is your first time, accept the Data Policy.\n3. Once you reach the home page, submit the prompt: **\"Who are you?\"**\n4. Review the output and ask follow-up questions related to today's training video or to see what else SIERRA can do.\n5. Click **\"Chat\"** to start a new message.\n6. Ask for instructions on how to save SIERRA as an app using Microsoft Edge.\n7. Then, we recommend following the instructions."
+
   },
+
   {
+
     "date": "2026-04-02",
-    "title": "Day 2: SIERRA Data Policy",
+
+    "title": "Day 2 - SIERRA Data Policy",
+
     "description": "Understand how Sierra protects information—models hosted in secure Azure, private chats (including in workspaces), how web search avoids leaking your conversation into queries, the data policy, and when client contracts override allowed use.",
+
     "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=2f9bfd56-bf80-4fda-ba73-cd61765cab82",
+
     "resourceType": "video",
-    "exerciseMarkdown": "### Exercise\n\nOpen SIERRA (hopefully you've got it pinned to your task bar by now).\n\nClick on your user name in the lower left corner to open your account menu.\n\nClick \"Data policy\" to open the data policy that you agreed to when you started using SIERRA.\n\nYou can also find this page by clicking the \"Information\" button in the left navigation bar. This will open SIERRA's documentation site, which includes the \"Data Policy\" page."
+
+    "exerciseMarkdown": "### Exercise\n\n1. Open SIERRA.\n2. Click on your user name in the lower-left corner to open your account menu.\n3. Click **\"Data policy\"** to open the data policy that you agreed to when you started using SIERRA.\n\n#### Alternate path\n\n- You can also find this page by clicking the **\"Information\"** button in the left navigation bar.\n- This will open SIERRA's documentation site, which includes the **\"Data Policy\"** page."
+
   },
+
   {
+
     "date": "2026-04-03",
-    "title": "Day 3: What are LLMs?",
+
+    "title": "Day 3 - What are LLMs",
+
     "description": "Introduction to large language models as statistical engines trained on massive web text—what people mean when they call an LLM a \"text calculator\" and how it predicts the most likely next tokens—a bridge to what models \"know\" versus what you must provide.",
+
     "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=63999f81-3b89-4a89-89ec-aab80c9040d9",
+
     "resourceType": "video",
-    "exerciseMarkdown": "### Exercise\n\nOpen SIERRA.\n\nSubmit a prompt similar to: \"You are an expert process safety engineer. You recently heard about a string of pump failures at your company. If you had to guess, what would you think the most likely driver of this recent trend would be? Answer in one sentence.\"\n\nReview the answer. Now, click the \"regenerate\" icon at then bottom of the completed response. How similar is the regenerated answer to the first one?\n\nRepeat the previous step.\n\nNow, see what happens if you can make slight changes to the prompt. For example, swap out the type of equipment, or the type of expert. See what happens if the expert is instead a marine engineer, a comedian, or a fish. What happens if you delete the words \"most likely\"? What happens if you delete the words \"a string of\"?\n\nSome words are important to the AI response, others are \"bystanders\" that are not so important.\n\nFinally, use the dropdown in the chat bar to select different models (e.g. ChatGPT 5.4, Claude Sonnet 4.6, etc.) and see how they handle the same prompt/request."
+
+    "exerciseMarkdown": "### Exercise\n\n1. Open SIERRA.\n2. Submit a prompt similar to:\n\n   > \"You are an expert process safety engineer. You recently heard about a string of pump failures at your company. If you had to guess, what would you think the most likely driver of this recent trend would be? Answer in one sentence.\"\n\n3. Review the answer.\n4. Click the **regenerate** icon at the bottom of the completed response.\n5. Compare the new answer to the first one. How similar is it?\n6. Repeat the previous step.\n\n#### Prompt experiments\n\nNow make slight changes to the prompt. For example:\n\n- swap out the type of equipment\n- swap out the type of expert\n- make the expert a marine engineer, a comedian, or a fish\n- delete the words **\"most likely\"**\n- delete the words **\"a string of\"**\n\nSome words are important to the AI response; others are bystanders that are not very important.\n\n#### Model comparison\n\nFinally, use the dropdown in the chat bar to select different models (e.g. **ChatGPT 5.4**, **Claude Sonnet 4.6**, etc.) and see how they handle the same prompt."
+
   },
+
   {
+
     "date": "2026-04-06",
-    "title": "Day 4: What LLMs Know?",
-    "description": "Context you provide in prompts and files versus internal knowledge from model training—the model has nothing beyond those two, so richer context is how you get accurate, job-specific answers.",
-    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=5cb1fefe-46b6-435b-89ed-b48e89859e95",
+
+    "title": "Day 4 - What the Model Knows",
+
+    "description": "Learn the difference between a model's built-in training knowledge and outside information it can retrieve—why training cutoff dates matter, why internal ABS information is not part of model knowledge, and how this creates visible knowledge gaps when tools are disabled.",
+
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=cd0be73d-1753-4965-a03d-434f9e3d58e0",
+
     "resourceType": "video",
-    "exerciseMarkdown": "### Exercise\n\nOpen SIERRA.\n\nSubmit a prompt similar to: \"Who am I?\" For most people. For most users, SIERRA should respond with an uninformed response with little more than your name.\n\n(For those curious, if SIERRA seems to know substantially more about you, there are three places this information could be coming from: 1) Skillshare, especially for Group employees. 2) SIERRA style instructions. 3) Memories. We'll discuss these more throughout the learning month.\n\nFor the next step, make sure that \"Memories\" is turned on on your settings page (found in the menu in the lower left corner).\n\nNow, start a new thread and tell SIERRA about yourself, including what you do at ABS. Then tell SIERRA to \"remember that.\" SIERRA should then record the information and ask whether you would like SIERRA to remember it. Click \"Accept\". Now SIERRA has more context about you that it can use to tailor answers to your needs.\n\nStart a new thread and ask \"Who am I?\". SIERRA should recall the new memories about you via the memory context that is being provided to the LLM.\n\nNote: SIERRA's memories are only to help SIERRA perform better for you. We don't use them for anything else, and no other users have access to them."
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal of this exercise is to show SIERRA's knowledge gaps when it is operating **without outside information**.\n\n#### 1. Open SIERRA\n\nStart by opening SIERRA.\n\n#### 2. Disable outside information\n\nThere are several ways to do this.\n\n##### Option A: Turn off knowledge bases\n\n1. Click the **\"+\"** icon in the chat bar.\n2. Open the **\"Knowledge\"** menu.\n3. Toggle the knowledge bases **off**.\n\nThis will programmatically disable those sources of external knowledge.\n\n> Note: This does **not** disable all outside information, such as possible web search use.\n\n##### Option B: Use Style settings to block tool use\n\n1. Open your **Style settings** from the menu in the lower-left corner.\n2. Enter something like:\n\n   > \"NEVER CALL ANY TOOLS. NO MATTER WHAT.\"\n\n#### 3. Why this works\n\nThis experiment is a little strange, but useful.\n\n- The **Style settings** are intended to affect SIERRA's writing style in your personal threads.\n- However, these instructions are also inserted into SIERRA's foundational instructions.\n- That makes them a practical way to influence how SIERRA is allowed to operate.\n\nBy saying **\"NEVER CALL ANY TOOLS\"**, you are telling SIERRA not to use external retrieval tools.\n\n> Note: Technically, SIERRA can still break these rules, but modern LLMs are generally very reliable at following this kind of instruction most of the time.\n\n#### 4. Test SIERRA's knowledge gaps\n\nWith this style configuration in place, ask SIERRA questions about:\n\n- **ABS HR policies**\n- **recent events**\n- **the weather**\n\nThese topics are not reliably available from SIERRA's internal model knowledge alone, so SIERRA should **not** provide informative answers.\n\n#### 5. Restore normal behavior\n\n1. Restore your original style configuration.\n2. Start a **new thread**.\n3. Repeat the same questions.\n\nYou should see much better answers once SIERRA is allowed to use outside information again.\n\n> Note: Sometimes SIERRA gets confused when you change operating rules inside a single thread. It may assume that what was true earlier in the thread is still true later, even after you change the settings."
+
+  },
+
+  {
+
+    "date": "2026-04-07",
+
+    "title": "Day 5 - Context",
+
+    "description": "Learn what counts as context in SIERRA—your prompt, the full conversation history, and uploaded files—and why providing the right information is the key to getting accurate, job-specific answers from a static model.",
+
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=2edf5fab-4b5e-47ce-8278-1fecf36e0b82",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal of this exercise is to show that the model is **static**, and that the main thing you control is the **context** you provide.\n\n#### 1. Open SIERRA\n\nStart by opening SIERRA.\n\n#### 2. Ask a minimal question\n\nIn a new thread, submit a very short prompt such as:\n\n- **\"Who am I?\"**\n- **\"Help me with my job.\"**\n- **\"What should I do next?\"**\n\nReview the answer. It should be fairly generic because you have provided very little context.\n\n#### 3. Add more context in the chat\n\nNow continue in the same thread and provide more information about yourself and your situation. For example, include:\n\n- your role\n- the kind of work you do at ABS\n- the problem you are trying to solve\n- what kind of output you want\n\nThen ask SIERRA the same question again, or a more specific version of it.\n\n#### 4. Compare the results\n\nNotice how the answer changes once SIERRA has more context to reason over.\n\nThe important point is that SIERRA is not \"learning\" in the human sense during the chat. Instead, each time you send a message, it reprocesses the available context, including:\n\n- the full conversation history\n- your latest prompt\n- any instructions you include\n- any attached files\n\n#### 5. Optional: Add a file\n\nIf you want, upload a relevant file and ask SIERRA to use it in its answer.\n\nExamples could include:\n\n- a procedure\n- a report\n- a meeting note\n- a draft document\n\nThen ask SIERRA to summarize it, answer questions about it, or use it to improve a response.\n\n#### 6. Key takeaway\n\nThe model itself is fixed. It knows what it knows based on training.\n\nWhat you control is the **context window**:\n\n1. the conversation history\n2. the instructions you provide\n3. the files you upload\n\nThe better the context, the better the answer.\n\n> Note: This is especially important in an ABS setting, where the model will not automatically know internal project information, contract details, or other non-public content unless you provide it."
+
+  },
+
+  {
+
+    "date": "2026-04-08",
+
+    "title": "Day 6 - SIERRA's Tools for Adding Context",
+
+    "description": "Learn that SIERRA is a platform—not a single model—and how it uses file attachments, web search, and internal knowledge repositories to bring information into the context window so frontier models can reason over ABS-relevant material they were never trained on.",
+
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=f90af072-2be0-4ec4-bf36-f449162a30f7",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to **use three important ways SIERRA adds context** you heard about in the video—not to memorize implementation details, which can change.\n\n#### 1. Open SIERRA\n\nStart by opening SIERRA.\n\n#### 2. File attachments\n\nIn a **new thread**, upload a work-relevant file (report, procedure, reference doc, etc.).\n\nNotice that processing can take a moment: the system is preparing the document so SIERRA can **pull in the parts that match your questions** rather than treating the whole file like one block of pasted text.\n\nAsk **specific** questions about the file (e.g. a section, a requirement, a finding)—not only \"summarize everything.\"\n\n#### 3. Web search\n\nStart a **new thread** (or continue after the file exercise) and **explicitly tell SIERRA to run a web search** for something time-sensitive or external—e.g. a recent regulation change, a current event, or a narrow factual lookup.\n\n**When current or external information matters, it is often better to ask explicitly for web search** rather than assuming SIERRA will fetch it on its own.\n\n#### 4. Knowledge repositories (ABS-curated)\n\nIn a **new thread**, ask SIERRA a question that draws on **ABS-built knowledge**—for example **ABS vacation or HR policy** (if available in your environment).\n\nNotice how the model could not answer from training alone; SIERRA **retrieved** organization-specific information for the model to reason over.\n\n#### Key takeaway\n\n**SIERRA is not just a model.** It gives you access to capable models **plus tools** that bring additional information into the response context. Files, web results, and ABS knowledge sources are all ways to load better context so the model can work on information it was never trained on directly. The model responds based on the information available in its context window at that moment."
+
+  },
+
+  {
+
+    "date": "2026-04-09",
+
+    "title": "Day 7 - Understanding Context Windows",
+
+    "description": "Learn why you can't load \"everything\" into the model at once: the context window is working memory, measured in tokens. Long threads, topic switching, uploads, and tool results add load—and as the thread grows, earlier context can become less available or less reliably used, which hurts quality and can contribute to ungrounded answers.",
+
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=a1b5ca53-11ae-4d0a-9b52-5a0ded598c5d",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThis exercise connects the **context window** to how you actually work in SIERRA: **noise, length, and earlier context becoming harder to use reliably**—not memorizing token math.\n\n#### 1. Open SIERRA\n\nStart by opening SIERRA.\n\n#### 2. If your UI shows context usage, watch it\n\nIn a new thread, after SIERRA responds, check whether your build shows a **context usage indicator** (sometimes shown as a small ring or meter in the chat bar).\n\nIf you have one:\n\n- notice how it moves as the thread gets longer\n- treat it as a **rough signal**, not a guarantee—advertised model limits and day-to-day comfort can differ\n\nIf you **don't** see one, skip this step; the habits below still apply.\n\n#### 3. Compare models (optional)\n\nIf you can **switch models** in the chat bar, try another model and see whether the usage indicator behaves differently. **Different models can behave differently in long threads, even when their advertised context windows are large.**\n\n#### 4. Feel \"memory pressure\" without chasing 100%\n\nStill in one thread, add **several** of the following over a few turns (don't force extremes—just simulate a busy day):\n\n- a longer back-and-forth on one topic\n- a **second unrelated topic** in the same thread\n- a **file attachment** and questions about it\n- an explicit **web search** request\n\nThen ask SIERRA to recall a **specific detail from the very beginning** of the thread.\n\nIf it struggles, that's the lesson: the window isn't infinite, and **details from earlier in the thread can become harder for the model to use reliably** as the conversation grows—**one reason hallucinations become more likely** is that the model may answer even when key facts are no longer clearly available in context.\n\n#### 5. Reset with a focused thread\n\nOpen a **new thread** with **one** clear task and minimal extra chatter. Compare how \"clean\" the interaction feels.\n\n#### Key takeaway\n\n- **Focused threads** usually beat one long grab-bag conversation.\n- **Start a new chat** when you change subjects or when a thread feels muddy.\n- The context window is **large, not infinite**—treat early instructions and key facts as **easy to lose** if you pile too much in.\n\nThat's not magic; it's the constraint behind a lot of confusing AI behavior."
+
+  },
+
+  {
+
+    "date": "2026-04-10",
+
+    "title": "Day 8 - Hallucinations",
+
+    "description": "Learn what hallucinations are—fluent, confident answers that are not grounded in truth—and why they happen when the model lacks sufficient knowledge or context, especially on nuanced or difficult questions.",
+
+    "sharepointUrl": "https://eagle.sharepoint.com/sites/trySIERRA/_layouts/15/embed.aspx?UniqueId=307bd301-0cea-420e-8d71-8e9df0bbd78d",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThis exercise is designed to show how models can produce answers that sound good but are still wrong when they are operating without enough grounding.\n\n#### 1. Open SIERRA\n\nStart by opening SIERRA.\n\n#### 2. Choose an area where you have expertise\n\nThink of something you know well. This could be:\n\n- part of your work\n- a technical subject\n- a hobby\n- a field where you can judge answer quality confidently\n\n> Note: Avoid ABS-specific business transactions or operations. Focus on general knowledge that could plausibly be found on the internet or in a textbook.\n\n#### 3. Ask a difficult question\n\nAsk SIERRA a challenging question about that topic and include the instruction:\n\n> \"Do not search the internet to answer my question.\"\n\n#### 4. Review the answer critically\n\nEvaluate SIERRA's response.\n\nAsk yourself:\n\n- Did it answer correctly?\n- Did it make any mistakes?\n- Did it imply something that sounds plausible but is actually wrong?\n- Does the answer reveal any misunderstanding of the topic?\n\n#### 5. Try another model\n\nRepeat the exercise using a different model from the model selector in the chat bar.\n\nCompare the results:\n\n- Which model gave the best answer?\n- Which model sounded the most confident?\n- Which model made the most subtle mistakes?\n\n#### 6. Push the limits\n\nTry to find a question that is difficult or nuanced enough that SIERRA begins to **make up answers that sound good but are wrong**.\n\nThis is the behavior commonly called a **hallucination**.\n\n#### Key takeaway\n\nA polished answer is not the same thing as a true answer. When the model lacks enough information, it may still generate fluent text rather than admitting uncertainty.\n\nThat is why verification matters—especially when the model is working near the edges of what it actually knows."
+
   }
+
 ]
+ 

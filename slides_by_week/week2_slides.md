@@ -90,7 +90,7 @@ Nothing exists outside these two. Internal knowledge is outside your control. Co
 
 ---
 
-**Day 7: Tokens & Context Windows**
+**Day 7: Understanding Context Windows**
 
 **Why can't we simply make ALL information available to the model?**
 

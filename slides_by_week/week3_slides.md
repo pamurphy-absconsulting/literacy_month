@@ -65,36 +65,42 @@ ABS example:
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 11: Context Engineering*
+*Day 11: Prompting for Structured Document Extraction*
 
 ---
 
-**Day 11: Memories & Customization**
+**Day 11: Prompting for Structured Document Extraction**
 
-*Opening note: "I mentioned context engineering at the end of last time — we'll get there, but I want to cover something that'll actually make that concept land better when we do."*
+*What you're leveraging here is processing power, not reasoning — Sierra's ability to read and ingest massive amounts of information and pull out key data at scale.*
 
-**Stop re-explaining yourself. Every thread shouldn't start from zero.**
+**Before you write the prompt, define the target.**
 
-**What memories do:**
-- Memories are persistent context — they carry into every thread automatically, without you typing them
-- Sierra uses them as background when forming responses
-- The response improves before you type a single word
+| Question | What to specify |
+|---|---|
+| **Field** | What am I extracting? |
+| **Definition** | What exactly counts? |
+| **Exclusions** | What should not count? |
+| **Location** | Where in the document is it likely found? |
+| **Decision rules** | How do I handle multiple candidates? |
+| **Evidence** | What proof should Sierra return? |
+| **Output format** | How should the result be structured? |
 
-**What to put in them:**
-Things you'd otherwise repeat at the start of every prompt:
-- Your role and specialization: *"I'm a marine surveyor, primarily hull and machinery"*
-- Your audience: *"I typically write for non-technical clients or port state inspectors"*
-- Your preferences: *"Keep responses concise. Use bullet points by default."*
-- Your team/group context: *"I work in ABS Offshore, primarily MODU and FPSO work"*
+**Five practical moves:**
+1. **Define the field** — name it precisely, not generically
+2. **Tell Sierra where to look** — section, heading, schedule, clause number
+3. **Set the boundaries** — spell out what counts and what doesn't
+4. **Extract in phases** — coarse pass first, then fine pass grounded by the anchors you confirmed
+5. **Ask for evidence and a set format** — return the clause, the exact text, one row per item
 
-**How to set them:**
-Tell Sierra directly — *"Remember that I..."* — or add them in your profile settings.
+**Phased extraction:**
+- **Pass 1:** Pull high-level anchors — party names, vessel type, contract structure, applicable schedule
+- **Pass 2:** Inject those anchors back into the prompt with the same file + precise instruction — the model is now working from confirmed ground truth, not guessing
 
-**Personal vs. Workspace memories:**
-- Personal memories: yours alone — follow you across all your standard threads
-- Workspace memories: shared across a team — covered next week with Workspaces
+**ABS example:**
+- Pass 1: *"Identify the contracting party, contract type, and which pricing schedule applies."*
+- Pass 2: *"Under Schedule B as confirmed above, extract the day-rate for each vessel class as defined in Clause 4. List any exclusions. Return one row per vessel class with: vessel class | day-rate | applicable clause | exclusions."*
 
-**Set it once. Stop repeating it every thread.**
+**The goal: reduce ambiguity enough that less thinking is left to the model — the less it has to figure out, the more it can focus on the extraction itself.**
 
 **ABS & Affiliated Companies**
 
@@ -108,20 +114,22 @@ Tell Sierra directly — *"Remember that I..."* — or add them in your profile 
 
 **Day 12: Working with Files — Part 1**
 
-**How file retrieval works:**
-- You can upload documents directly into a thread — Sierra does not read the whole file into the chat
-- Sierra extracts text from the file, indexes it in retrievable sections, and retrieves the most relevant passages based on your query — those passages enter the context window
-- The quality of retrieval depends on the quality of the source — clearly formatted, text-based documents retrieve more reliably than image-heavy or poorly structured ones
+[Visual: FILE → CONVERSION → STORE → RETRIEVE → RESPOND. Note under CONVERSION: "preview available before attaching"]
 
-**How to prompt when working with a file:**
-- **Your query drives what gets retrieved** — vague questions surface vague content; specific questions surface specific content
-- Don't ask: *"Summarize this report"* — Ask: *"What are the top findings related to hull condition in section 3?"*
-- Reference sections, topics, or names directly — it helps Sierra retrieve the right chunk
-- If Sierra misses something you know is in the file, restate the question with more specificity or quote a term from the document
+**Common misconceptions:**
+- Once you upload a file, SIERRA now "knows" it
+- The entire file's contents are brought into context
+- SIERRA reads and understands all content always
+- SIERRA can answer questions on data even when it doesn't have the data
+
+**How SIERRA actually handles files:**
+- Files are converted to raw text — you can preview before attaching
+- Once attached, all files in the thread are pooled into a shared store (a separate database, not the context window)
+- When you send a query, Sierra pulls the most relevant sections into context and sends those — along with your question — to the model
+- The entirety of the file is not in the context window; different questions surface different sections
+- Source quality matters — clean, structured text converts more reliably
 
 **Thread attachments are temporary** — Sierra does not carry them into new threads. For files shared across a team, use workspace files instead.
-
-[Visual: File upload flow — FILE → EXTRACT TEXT → INDEX SECTIONS → RETRIEVE (based on query) → CONTEXT WINDOW → RESPONSE. Callout: "Sierra retrieves what your question points to — ask specifically."]
 
 **ABS & Affiliated Companies**
 
@@ -135,21 +143,25 @@ Tell Sierra directly — *"Remember that I..."* — or add them in your profile 
 
 **Day 13: Working with Files — Part 2**
 
-**Getting structured output:**
-- Sierra can generate summaries, extracted data, reformatted content, and comparisons from files
-- **Give it a template** — paste an example of the output you want and say *"match this structure"*; don't describe the format in the abstract when you can just show it
-- **Break it into steps** (Day 10 applies here): extract first, then rank, then write — don't ask for the finished deliverable in one shot
+*"There's no amount of prompting that can compensate for data simply not being read in correctly."*
 
-**Prompting for output quality:**
-- Be explicit about audience and purpose: *"Write this for a non-technical port state inspector, one page, plain language"*
-- Ask it to flag uncertainty: *"Note any areas where the document was unclear or where you had to make assumptions"*
-- If the first output misses: don't start over — tell it what was wrong: *"Too general — go back to section 4 and pull the specific deficiency findings"*
+**File format — the number one thing to consider:**
+- Is it text-based or image-heavy?
+- Is it a scanned PDF or a DOCX?
+- Is it tabular or diagram-heavy?
+- All of these impact the conversion — the model is reading text, so images and diagrams get converted to text descriptions; complexity affects quality
 
-**What Sierra produces vs. what you finish:**
-- Sierra gives you content to work with, not finished deliverables — apply final formatting, branding, and production in your document tools
-- The habit that stays constant: direct the output, then shape it into the final form yourself
+**Conversion quality — preview it before you attach:**
+- When you upload a file, you can preview the conversion before attaching it to a thread
+- By default Sierra runs **fast conversion** — strips out text, maintains general structure
+- If the preview looks incomplete or mangled, switch to **full conversion** — runs OCR, looks at images and generates descriptions, produces a more complete structured format
+- Check it. If the conversion is wrong, the prompt won't fix it.
 
-[Visual: Prompt → Output → Refine loop. Callout: "Show it the template. Break it into steps. Tell it what was wrong." Below: "Sierra produces the content. You handle the final form."]
+**The inputs are what shape the outputs.**
+- We don't naturally apply the same logic to AI that we apply to a calculator — when we get a wrong answer, our first instinct isn't to check the inputs
+- Start there. The problem is usually in the data that was ingested, not the model.
+
+[Visual: PROMPT → OUTPUT → REFINE → REPEAT loop. Two panels: FILE FORMAT (text-based vs. image-heavy, scanned vs. DOCX, tabular/diagram-heavy) | CONVERSION QUALITY (preview, fast vs. full/OCR). Callout: "Inputs shape outputs."]
 
 **ABS & Affiliated Companies**
 

@@ -5,11 +5,31 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 19: Real Workflow — Writing & Document Work*
+*Day 19: SkillShare & HR Tools*
 
 ---
 
-**Day 19: Real Workflow — Writing & Document Work**
+**Day 19: SkillShare & HR Tools**
+
+- **SkillShare:** Sierra can search ABS's internal expertise directory — use it when you need to find a human expert, not just an AI answer *(ABS Group employees only; not available to Bureau or Wavesight by default)*
+- **HR Tool:** Sierra has access to ABS HR knowledge — policies, benefits, procedures, specific to company (Bureau/Group/Wavesight) and country — ask naturally, it retrieves accurately
+- Both are retrieval tools — same pipeline as Plato and workspace files, different knowledge source
+- SkillShare is for finding people; HR is for finding policy — know which one to reach for
+- These tools extend what Sierra knows about ABS — they don't replace your judgment or relationships
+
+[Visual: Three-panel row — PLATO (ABS standards/technical), SKILLSHARE (ABS people/expertise), HR TOOL (ABS policies/benefits). Each panel has a short "Best for:" label. Header: "ABS-Specific Retrieval Tools — same pipeline, different sources."]
+
+**ABS & Affiliated Companies**
+
+---
+
+**ABS & Affiliated Companies**
+**SIERRA Literacy Month**
+*Day 20: Real Workflow — Writing & Document Work*
+
+---
+
+**Day 20: Real Workflow — Writing & Document Work**
 
 - The full stack for document work: upload the file → set context → prompt with a specific ask → refine output
 - Use workspace context or memories so Sierra already knows your audience, standards, and style
@@ -25,11 +45,11 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 20: Real Workflow — Research & Analysis*
+*Day 21: Real Workflow — Research & Analysis*
 
 ---
 
-**Day 20: Real Workflow — Research & Analysis**
+**Day 21: Real Workflow — Research & Analysis**
 
 - A typical research stack: Plato for ABS rules and maritime regulations → eCFR for US federal regulations → web search for current external info → files for project specifics → synthesize — use the tools that are available and relevant, not all at once
 - Ask Sierra to cite sources, state its assumptions, and flag what may need verification — makes gaps and errors easier to spot
@@ -45,11 +65,11 @@
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 21: What You Now Know*
+*Day 22: What You Now Know*
 
 ---
 
-**Day 21: What You Now Know**
+**Day 22: What You Now Know**
 
 - You understand what Sierra is, how it works, and why it's the right tool for ABS work
 - You know the mental model: model limits → context → retrieval (RAG) → prompting → workspaces → full workflows
