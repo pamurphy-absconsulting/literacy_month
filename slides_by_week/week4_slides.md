@@ -1,42 +1,35 @@
 # SIERRA Literacy Month — Week 4 Slides
-## Days 14–19: Knowledge Systems & Tools
+## Days 14–19: Memories, Workspaces & Knowledge Tools
 
 ---
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 14: Memories & Customization*
+*Day 14: Memories*
 
 ---
 
-**Day 14: Memories & Customization**
+**Day 14: Memories**
 
-*Opening note: "I mentioned context engineering at the end of Day 10 — we'll get to the full picture today and next week. First, the simplest thing you can do to make Sierra better before you type a single word."*
+*Memories allow for persistent context — new threads don't have to start from scratch.*
 
-**Stop re-explaining yourself. Every thread shouldn't start from zero.**
+[Visual: Three-column layout]
 
 **What memories do:**
-- Memories are persistent context — they carry into every thread automatically, without you typing them
-- Sierra uses them as background when forming responses
-- The response improves before you type a single word
+- Persistent context — injected into every thread automatically
+- SIERRA uses them as background when forming responses
+- Grounds the model output and allows for more tailored responses
 
 **What to put in them:**
-Things you'd otherwise repeat at the start of every prompt:
-- **Role / specialization** — e.g. marine surveyor, hull & machinery, new construction vs. in-service
-- **Operating context** — e.g. division, regions, typical asset types or survey work you do most often *(stable across threads)*
-- **Preferences** — e.g. concise by default, bullet points unless you ask otherwise, plain vs. technical language as your usual default
-- **Regulatory focus** — e.g. ABS Rules & Guides, SOLAS, MARPOL, IACS — whichever frameworks you usually reason in *(bias the angle; don't replace Plato or files)*
-
-*Who you're writing for often changes thread to thread — put that in the prompt when it matters, not in memories.*
+- **Role / specialization** — *marine surveyor, hull & machinery*
+- **Operational Context** — *industry, region, team, organization*
+- **Preferences** — *writing style, output format, etc.*
 
 **How to set them:**
-Tell Sierra directly — *"Remember that I..."* — or add them in your profile settings.
+- Tell SIERRA: *"Remember that I am a marine surveyor focused on MODU & FPSO."*
+- View and modify in profile settings
 
-**Personal vs. Workspace memories:**
-- Personal memories: yours alone — follow you across all your standard threads
-- Workspace memories: shared across a team — covered tomorrow with Workspaces
-
-**Set it once. Stop repeating it every thread.**
+**Save key context to memories once — automatically included in every thread.**
 
 **ABS & Affiliated Companies**
 
@@ -44,19 +37,21 @@ Tell Sierra directly — *"Remember that I..."* — or add them in your profile 
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 15: Workspaces — Part 1*
+*Day 15: Workspaces*
 
 ---
 
-**Day 15: Workspaces — Part 1**
+**Day 15: Workspaces**
 
-- A workspace is a shared environment where threads can access common instructions, context, and files — configure it once, work done in that workspace benefits from it
-- **Workspace Context:** standing guidance and background knowledge that applies across threads in the workspace
-- **Workspace Memories:** durable shared information relevant to the workspace — available to all threads and users without needing retrieval
-- **Workspace Files:** searchable knowledge sources available across threads and users — mention file names in prompts to improve retrieval
-- Context works differently depending on where you are — in a workspace, shared workspace-level context shapes every thread automatically
+A workspace is a collaborative environment where multiple 'members' can access common instructions, context, and files.
 
-[Visual: Container diagram. Outer box labeled "WORKSPACE." Inside: three stacked horizontal bands — CONTEXT (blue: "Standing guidance"), MEMORIES (purple: "Shared team knowledge"), FILES (teal: "Searchable documents — retrieved on demand"). Outside/below: a smaller box labeled "THREAD" with an arrow pointing into it labeled "Draws from workspace." Callout: "Workspace context is shared and persistent. Thread content is yours and temporary."]
+- **Workspace Context:** Background knowledge that applies across all threads in the workspace
+- **Workspace Memories:** Shared information relevant to the workspace that can be dynamically added by each member
+- **Workspace Files:** Searchable/retrievable knowledge sources available across threads and members — mention file names in prompts to improve retrieval
+
+*Workspace context is shared and persistent. Thread content is yours and temporary.*
+
+[Visual: Container diagram. Outer box labeled "WORKSPACE." Inside: three stacked horizontal bands — CONTEXT (blue: "Standing guidance"), MEMORIES (purple: "Shared team knowledge"), FILES (green: "Searchable documents"). Arrow down to a smaller box outside labeled "THREAD — yours & temporary." Callout: "Workspace context is shared and persistent. Thread content is yours and temporary."]
 
 **ABS & Affiliated Companies**
 
@@ -64,19 +59,23 @@ Tell Sierra directly — *"Remember that I..."* — or add them in your profile 
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 16: Workspaces — Part 2*
+*Day 16: Workspace Task Modes*
 
 ---
 
-**Day 16: Workspaces — Part 2**
+**Day 16: Workspace Task Modes**
 
-- **Task Modes:** reusable step-by-step instructions for specific, repeatable workflows — invoked by users when needed
-- What a Task Mode can include: steps, which workspace files to reference, which tools to activate, output format requirements
-- Rule of thumb: general background → Workspace Context or Memories / specific repeatable activity → Task Mode
-- Users invoke a Task Mode when they need it — Task Modes help Sierra follow a more consistent workflow for repeatable tasks
-- Real examples: survey report review, client summary generation, compliance assessment, meeting notes
+**Task Modes:**
+- Reusable step-by-step instructions for specific, repeatable workflows
+- Can include: instructions, steps to take, which workspace files to reference, which tools to activate, output format requirements
+- Rule of thumb:
+  - General background → Workspace Context
+  - Specific repeatable activity → Task Mode
+- Real examples: emergency response validation, incident root cause analysis, regulatory compliance check, flag state compliance
 
-[Visual: Full workspace diagram — same container as Day 15 (now Day 16), now with a fourth band added: TASK MODES (orange: "Reusable workflow instructions — invoked on demand"). Below the diagram: a two-row callout — "Context + Memories: always on, for everything" vs. "Task Modes: invoked when needed, for specific jobs."]
+**CONTEXT + MEMORIES** *(always on, for everything)* → **TASK MODES** *(invoked when needed, for specific jobs)*
+
+[Visual: Same WORKSPACE container as Day 15, now with a fourth band added: TASK MODES (red: "Reusable workflow instructions"). Below: two boxes — "CONTEXT + MEMORIES: always on, for everything" arrow to "TASK MODES: invoked when needed, for specific jobs."]
 
 **ABS & Affiliated Companies**
 

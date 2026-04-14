@@ -126,6 +126,86 @@
 
     "exerciseMarkdown": "### Exercise\n\nThis exercise is designed to show how models can produce answers that sound good but are still wrong when they are operating without enough grounding.\n\n#### 1. Open SIERRA\n\nStart by opening SIERRA.\n\n#### 2. Choose an area where you have expertise\n\nThink of something you know well. This could be:\n\n- part of your work\n- a technical subject\n- a hobby\n- a field where you can judge answer quality confidently\n\n> Note: Avoid ABS-specific business transactions or operations. Focus on general knowledge that could plausibly be found on the internet or in a textbook.\n\n#### 3. Ask a difficult question\n\nAsk SIERRA a challenging question about that topic and include the instruction:\n\n> \"Do not search the internet to answer my question.\"\n\n#### 4. Review the answer critically\n\nEvaluate SIERRA's response.\n\nAsk yourself:\n\n- Did it answer correctly?\n- Did it make any mistakes?\n- Did it imply something that sounds plausible but is actually wrong?\n- Does the answer reveal any misunderstanding of the topic?\n\n#### 5. Try another model\n\nRepeat the exercise using a different model from the model selector in the chat bar.\n\nCompare the results:\n\n- Which model gave the best answer?\n- Which model sounded the most confident?\n- Which model made the most subtle mistakes?\n\n#### 6. Push the limits\n\nTry to find a question that is difficult or nuanced enough that SIERRA begins to **make up answers that sound good but are wrong**.\n\nThis is the behavior commonly called a **hallucination**.\n\n#### Key takeaway\n\nA polished answer is not the same thing as a true answer. When the model lacks enough information, it may still generate fluent text rather than admitting uncertainty.\n\nThat is why verification matters—especially when the model is working near the edges of what it actually knows."
 
+  },
+
+  {
+
+    "date": "2026-04-13",
+
+    "title": "Day 9 - Prompting Fundamentals",
+
+    "description": "Learn that specificity is the single biggest lever you have—how to build a strong prompt using Role, Task, Context, and Format—and why prompting is iterative: your first message is a starting point, not a final answer.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to feel the difference between a vague prompt and a well-structured one—and to practice the iterative back-and-forth that makes SIERRA useful.\n\n#### 1. Open SIERRA\n\nStart a new thread in SIERRA.\n\n#### 2. Start with a weak prompt\n\nPick a real task from your work—something you'd actually want help with. Submit a short, vague version of it. For example:\n\n> \"Write a summary of this report.\"\n\nor\n\n> \"Help me with this project.\"\n\nNote what you get back.\n\n#### 3. Rebuild it using Role, Task, Context, and Format\n\nIn a new thread, rewrite the same request using all four ingredients:\n\n- **Role** — tell SIERRA what it is: *\"You are a senior marine surveyor reviewing a vessel inspection report...\"*\n- **Task** — be specific about what you want done: *\"Summarize the top 3 findings. Focus on structural and safety deficiencies.\"*\n- **Context** — give it background: paste in the document, describe the client, name the project\n- **Format** — specify the output: *\"Use bullet points. Plain language. No more than half a page.\"*\n\nCompare the output to step 2.\n\n#### 4. Iterate — don't restart\n\nOnce you have the first response, stay in the thread and refine it:\n\n- Tell it what was wrong: *\"Too long — cut it to 3 bullets only.\"*\n- Add something it missed: *\"Also include a note on the recommended follow-up action for each finding.\"*\n- Ask it to adjust tone or format\n\nPractice treating the conversation as a dialogue, not a one-shot query.\n\n#### 5. Ask SIERRA to write the prompt for you\n\nIn a new thread, describe what you need in rough, plain language—stream of consciousness is fine. Then end with:\n\n> \"Based on everything I just described, write me a clean, structured prompt I can use going forward.\"\n\nUse that prompt to kick off a new thread and see how it performs.\n\n#### Key takeaway\n\nVague prompts produce vague output. The four ingredients—Role, Task, Context, Format—give SIERRA an angle of approach, clear instruction, the right raw material, and a target output. Your first prompt is a starting point. Iteration is the method."
+
+  },
+
+  {
+
+    "date": "2026-04-14",
+
+    "title": "Day 10 - Structuring Complex Tasks",
+
+    "description": "Learn to approach SIERRA as an architect directing execution—why breaking a complex task into sequential steps produces better results than one large prompt, and how to build reusable prompts from a refined workflow.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to practice the sequential step approach on a real multi-part task—and feel the difference between one large prompt and a guided workflow.\n\n#### 1. Open SIERRA\n\nStart a new thread in SIERRA.\n\n#### 2. Pick a multi-step task\n\nChoose something from your work that involves more than one distinct stage. Examples:\n\n- Review a report, identify findings, then draft a summary for a client\n- Pull key data from a document, rank by priority, then write a recommendation\n- Review a set of requirements, flag gaps, then suggest next steps\n\nIf nothing comes to mind, use this scenario: *you have survey findings and need to produce a client-ready executive summary covering the top 3 items by severity.*\n\n#### 3. Try it in one prompt first\n\nSubmit the entire task in a single message—everything you need in one shot. Review the output. Note where it's strong and where it falls short.\n\n#### 4. Break it into steps\n\nOpen a new thread. Work through the same task one step at a time:\n\n- **Step 1:** Extract or identify the raw material (findings, data points, key facts)\n- **Step 2:** Review that output and refine it before moving on — add what's missing, remove what's wrong\n- **Step 3:** Rank, prioritize, or organize based on Step 1's confirmed output\n- **Step 4:** Generate the final deliverable based on the confirmed structure from Steps 1-3\n\nPause at each step. Treat each output as something to review and correct before proceeding.\n\n#### 5. Save the workflow as a reusable prompt\n\nOnce you've worked through the task and are satisfied with the output, ask SIERRA:\n\n> \"Review our full conversation and write a reusable prompt that captures all the steps we worked through—something I can use as a starting point next time I have a similar task.\"\n\nSave that prompt somewhere accessible.\n\n#### Key takeaway\n\nYou are the subject matter expert. SIERRA does not know your process, your client, or your professional judgment. Break complex tasks into steps, review each output before moving to the next, and build reusable prompts from workflows that work."
+
+  },
+
+  {
+
+    "date": "2026-04-15",
+
+    "title": "Day 11 - Structuring Prompts for Data Extraction",
+
+    "description": "Learn how to make document extraction more deterministic—by defining fields, exclusions, location clues, decision rules, and output format before writing the prompt—and how phased extraction grounds the model for more granular follow-up passes.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to practice building a structured extraction prompt before writing it—using the pre-prompt checklist from the video—and to see how much more reliable the output is when the model has less to figure out on its own.\n\n#### 1. Choose a document\n\nPick a document you regularly work with that contains structured information you need to pull out. Good candidates:\n\n- a contract (pricing, parties, scope, schedule)\n- a survey report (findings, vessel details, recommendations)\n- a regulatory document (requirements, applicability, exceptions)\n- a technical specification (parameters, limits, referenced standards)\n\nIf you don't have one handy, use any multi-section document you have access to.\n\n#### 2. Define the target before you write a single word of the prompt\n\nFor one field you want to extract, answer these questions in plain text first:\n\n- **Field:** What am I extracting?\n- **Definition:** What exactly counts as this?\n- **Exclusions:** What looks like it qualifies but doesn't?\n- **Location:** Where in the document is it likely found? (section heading, clause number, schedule, etc.)\n- **Decision rules:** If there are multiple candidates, how do I choose?\n- **Evidence:** What should SIERRA return to show me it got it right? (exact quote, clause reference, etc.)\n- **Output format:** How should the result be structured? (one row per item, table, bullet list, etc.)\n\nDo this for 2-3 fields if you can.\n\n#### 3. Write and submit the extraction prompt\n\nNow build the prompt using what you defined. Upload the document and send it.\n\nCompare the output to what you'd get from a generic prompt like *\"extract the pricing from this contract.\"*\n\n#### 4. Try phased extraction (optional)\n\nIf your document is complex or long, try a two-pass approach:\n\n- **Pass 1:** Ask SIERRA to pull only the high-level anchors—parties, document type, applicable schedule or section structure\n- **Pass 2:** Take that output, include it back in your next prompt along with the same file, and ask for the granular fields using the confirmed anchors as a starting point\n\nExample Pass 2 opener: *\"Based on the above—[paste Pass 1 output]—now extract the following from [confirmed section]...\"*\n\n#### Key takeaway\n\nYou are not asking the model to reason. You are asking it to process. The more you define before you write the prompt—field, definition, location, exclusions, output format—the less the model has to figure out on its own, and the more consistent and reviewable the output becomes."
+
+  },
+
+  {
+
+    "date": "2026-04-16",
+
+    "title": "Day 12 - Working with Files Part 1",
+
+    "description": "Learn how SIERRA actually processes uploaded files—conversion to raw text, indexing into a thread-level store, and query-based retrieval into the context window—and why different queries surface different parts of the same document.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to see how SIERRA retrieves from files—and to move past the assumption that uploading a file means SIERRA now \"knows\" all of it.\n\n#### 1. Open SIERRA and upload a file\n\nStart a new thread. Upload a multi-section document—something with distinct headings, sections, or topics. A report, procedure, or contract works well.\n\nBefore attaching it, **preview the conversion**: click on the file to see what SIERRA has converted it to. This is the raw text the model will actually work from.\n\n#### 2. Ask a targeted question\n\nAsk about a specific section or piece of information from the file. Be precise—reference the section heading, clause, or topic by name.\n\nNote what SIERRA returns. Did it pull from the right section?\n\n#### 3. Ask a different question about the same file\n\nNow ask about a completely different section of the same document—something from a different part of the file.\n\nNotice how SIERRA surfaces different content for a different query. **The whole file is not in the context window—different questions pull different sections.**\n\n#### 4. Ask something vague\n\nSubmit a broad, unspecific question about the file—something like *\"what does this document say?\"* or *\"summarize everything.\"*\n\nCompare the quality of this response to the targeted questions in steps 2 and 3. Vague queries produce vague retrieval.\n\n#### 5. Start a new thread\n\nClose the thread and start a fresh one. Do not re-upload the file.\n\nAsk SIERRA about the document you uploaded in the previous thread.\n\nIt will not have access to it. **Thread attachments are temporary—they do not carry over.**\n\n#### Key takeaway\n\nUploading a file does not mean SIERRA has read all of it. It means the file has been converted and indexed. What gets brought into the context window depends on what you ask. Specific, targeted queries surface more relevant content than broad ones. And files do not persist across threads—attach them again when you start a new conversation."
+
+  },
+
+  {
+
+    "date": "2026-04-17",
+
+    "title": "Day 13 - Working with Files Part 2",
+
+    "description": "Learn why input quality determines output quality—how file format and conversion accuracy affect what SIERRA can reason over—and how to use SIERRA's fast and full conversion modes to improve results before a prompt is written.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to make inspecting file conversions a default habit—and to see firsthand how conversion quality affects the answers you get.\n\n#### 1. Find two files to compare\n\nLook for two files that differ in how they were created or structured. Good pairings:\n\n- a clean DOCX or text-based PDF vs. a scanned PDF\n- a document with clear headings and sections vs. one with complex tables or embedded diagrams\n- a report generated from a system vs. a hand-filled form\n\nIf you only have one type, that's fine—use what you have.\n\n#### 2. Upload and preview the conversion\n\nUpload the first file. Before asking any questions, **open the conversion preview** and read through it.\n\nAsk yourself:\n\n- Does the structure make sense?\n- Are tables or lists still readable?\n- Is anything missing, garbled, or out of order?\n- Would you trust this as the input to a prompt?\n\nRepeat for the second file if you have one.\n\n#### 3. If the conversion looks incomplete, try full conversion\n\nIf you notice the preview is missing content—especially if the file is image-heavy, scanned, or diagram-dense—look for the option to switch from **fast** to **full** conversion.\n\n- **Fast:** strips to raw text, preserves general structure (default)\n- **Full:** runs OCR, reads images and generates text descriptions, produces a more complete output\n\nRe-preview after switching and compare.\n\n#### 4. Ask the same question under both conditions\n\nIf you were able to compare fast and full conversion on the same file, ask SIERRA the same specific question under each condition. Compare the answers.\n\nAlternatively, ask a question that targets a section you noticed was missing or garbled in the preview, and observe how the answer reflects that gap.\n\n#### 5. Apply the calculator rule\n\nIf you get an answer that seems wrong or incomplete, go back and check the conversion before assuming the model failed. Ask: *did I key in the inputs correctly?*\n\n#### Key takeaway\n\nNo amount of prompting compensates for a bad conversion. The first thing to check when SIERRA gets something wrong from a file is whether the file was read in correctly. Preview the conversion. Switch to full if needed. The inputs shape the outputs—always."
+
   }
 
 ]

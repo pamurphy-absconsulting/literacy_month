@@ -84,7 +84,7 @@
 - You decide the sequence and what good output looks like at each stage
 - Once a workflow is dialed in, ask Sierra to build a reusable prompt from the conversation history — save it as a starting point for next time
 
-**Day 11: Prompting for Structured Document Extraction**
+**Day 11: Structuring Prompts for Data Extraction**
 - What you are leveraging here is processing power, not reasoning — the model's ability to read and ingest massive amounts of information and pull out key data at scale; the goal is deterministic output, not brainstorming
 - The organizing principle: reduce the model's cognitive load — every ambiguity you leave unresolved is left to the model to fill; the less it has to figure out, the more it focuses on the extraction
 - Pre-prompt checklist: Field (what am I extracting?), Definition (what exactly counts?), Exclusions (what does not count?), Location (where in the document is it found?), Decision rules (if/then logic for ambiguous cases), Evidence (what proof should Sierra return?), Output format (how should results be structured?)
@@ -112,25 +112,25 @@
 ### WEEK 4 (April 21-25): Knowledge Systems & Tools
 *5 days: Monday - Friday*
 
-**Day 14: Memories & Customization**
-- Memories are persistent context that carry into every thread automatically — no retyping required
-- What to put in them: role and specialization; operating context (division, regions, typical assets/survey work); output preferences (length, format, default register); regulatory focus (usual rule/convention framing). Audience is usually per-thread — state in the prompt when it matters
-- Personal memories follow you across all standard threads; workspace memories are shared across a team
-- Set memories once, stop repeating yourself every thread — the response improves before you type a word
+**Day 14: Memories**
+- Memories are persistent context — injected into every thread automatically, no retyping required
+- What to put in them: role and specialization; operational context (industry, region, team, organization); preferences (writing style, output format)
+- Set them by telling Sierra directly ("Remember that I...") or through profile settings
+- Save key context once — automatically included in every thread; the model output is grounded and more tailored before you type a word
 
-**Day 15: Workspaces — Part 1**
-- Context engineering: every response is shaped by more than your prompt — prompt, thread history, memories, workspace instructions, and retrieved knowledge all feed into what the model sees; workspaces are how you engineer the persistent, shared side of that at a team level
-- A workspace is a shared environment where threads can access common instructions, context, and files — configure once, every thread in that workspace benefits
-- Workspace Context: standing guidance and background knowledge that applies across all threads in the workspace
-- Workspace Memories: durable shared information available to all threads and users without retrieval
-- Workspace Files: searchable knowledge sources available across threads — mention file names in prompts to improve retrieval
+**Day 15: Workspaces**
+- A workspace is a collaborative environment where multiple members can access common instructions, context, and files
+- Workspace Context: background knowledge that applies across all threads in the workspace
+- Workspace Memories: shared information relevant to the workspace — can be dynamically added by each member
+- Workspace Files: searchable/retrievable knowledge sources available across threads and members — mention file names in prompts to improve retrieval
+- Workspace context is shared and persistent; thread content is yours and temporary
 
-**Day 16: Workspaces — Part 2**
+**Day 16: Workspace Task Modes**
 - Task Modes: reusable step-by-step instructions for specific, repeatable workflows — invoked by users when needed
 - What a Task Mode can include: steps, which workspace files to reference, which tools to activate, output format requirements
 - Rule of thumb: general background → Workspace Context / specific repeatable activity → Task Mode
-- Task Modes help Sierra follow a more consistent workflow for repeatable tasks
-- Real examples: survey report review, client summary generation, compliance assessment, meeting notes
+- Real examples: emergency response validation, incident root cause analysis, regulatory compliance check, flag state compliance
+- Context + Memories are always on for everything; Task Modes are invoked when needed for specific jobs
 
 **Day 17: Plato — Sierra's Maritime Research Mode**
 - Plato is a specialized Sierra mode for maritime rules and regulatory research — not a general knowledge base *(in preview; may not be available to all users)*

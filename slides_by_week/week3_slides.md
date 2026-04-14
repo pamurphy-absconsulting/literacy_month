@@ -65,11 +65,11 @@ ABS example:
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 11: Prompting for Structured Document Extraction*
+*Day 11: Structuring Prompts for Data Extraction*
 
 ---
 
-**Day 11: Prompting for Structured Document Extraction**
+**Day 11: Structuring Prompts for Data Extraction**
 
 *What you're leveraging here is processing power, not reasoning — Sierra's ability to read and ingest massive amounts of information and pull out key data at scale.*
 
