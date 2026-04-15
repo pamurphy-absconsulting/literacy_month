@@ -206,6 +206,86 @@
 
     "exerciseMarkdown": "### Exercise\n\nThe goal is to make inspecting file conversions a default habit—and to see firsthand how conversion quality affects the answers you get.\n\n#### 1. Find two files to compare\n\nLook for two files that differ in how they were created or structured. Good pairings:\n\n- a clean DOCX or text-based PDF vs. a scanned PDF\n- a document with clear headings and sections vs. one with complex tables or embedded diagrams\n- a report generated from a system vs. a hand-filled form\n\nIf you only have one type, that's fine—use what you have.\n\n#### 2. Upload and preview the conversion\n\nUpload the first file. Before asking any questions, **open the conversion preview** and read through it.\n\nAsk yourself:\n\n- Does the structure make sense?\n- Are tables or lists still readable?\n- Is anything missing, garbled, or out of order?\n- Would you trust this as the input to a prompt?\n\nRepeat for the second file if you have one.\n\n#### 3. If the conversion looks incomplete, try full conversion\n\nIf you notice the preview is missing content—especially if the file is image-heavy, scanned, or diagram-dense—look for the option to switch from **fast** to **full** conversion.\n\n- **Fast:** strips to raw text, preserves general structure (default)\n- **Full:** runs OCR, reads images and generates text descriptions, produces a more complete output\n\nRe-preview after switching and compare.\n\n#### 4. Ask the same question under both conditions\n\nIf you were able to compare fast and full conversion on the same file, ask SIERRA the same specific question under each condition. Compare the answers.\n\nAlternatively, ask a question that targets a section you noticed was missing or garbled in the preview, and observe how the answer reflects that gap.\n\n#### 5. Apply the calculator rule\n\nIf you get an answer that seems wrong or incomplete, go back and check the conversion before assuming the model failed. Ask: *did I key in the inputs correctly?*\n\n#### Key takeaway\n\nNo amount of prompting compensates for a bad conversion. The first thing to check when SIERRA gets something wrong from a file is whether the file was read in correctly. Preview the conversion. Switch to full if needed. The inputs shape the outputs—always."
 
+  },
+
+  {
+
+    "date": "2026-04-20",
+
+    "title": "Day 14 - Memories",
+
+    "description": "Learn how memories work as persistent context—injected into every thread automatically—and how setting your role, operational context, and preferences once changes the quality of responses before you type a single word.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to feel the difference between a cold thread and one where SIERRA already knows who you are and what you need.\n\n#### 1. Run a prompt with no context\n\nOpen a new thread in SIERRA. Submit a prompt that requires SIERRA to know something about you — your role, your domain, your typical output preferences. For example:\n\n> \"Draft a short summary of the key risks for a client.\"\n\nor\n\n> \"Review this finding and suggest how to communicate it.\"\n\nNote what you get back. It will likely be generic.\n\n#### 2. Set your memories\n\nNow tell SIERRA what to remember. In a new thread, work through the following one by one:\n\n- **Role / specialization** — e.g. *\"Remember that I am a marine surveyor specializing in hull and machinery for offshore structures.\"*\n- **Operational context** — e.g. *\"Remember that I primarily work in the Gulf of Mexico region on MODUs and FPSOs.\"*\n- **Preferences** — e.g. *\"Remember that I prefer concise bullet-point outputs unless I ask for something longer.\"*\n\nFor each, tell SIERRA directly: *\"Remember that...\"* and confirm when it saves.\n\n#### 3. Verify your memories\n\nGo to your profile settings and open the Memories section. Confirm the memories were saved correctly. Edit or delete any that aren't right.\n\n#### 4. Run the same prompt again\n\nOpen a new thread and submit the same prompt you used in step 1 — without adding any extra context.\n\nCompare the output to what you got before. The response should be more grounded and tailored without you typing a single extra word of setup.\n\n#### Key takeaway\n\nMemories are persistent context. They remove the repetitive setup cost from every thread. Set them once for things that are stable — your role, your domain, your preferences — and let SIERRA start each conversation already oriented to your work."
+
+  },
+
+  {
+
+    "date": "2026-04-21",
+
+    "title": "Day 15 - Workspaces",
+
+    "description": "Learn how workspaces let teams share context, memories, and files—so that every thread within the workspace draws from the same background knowledge without anyone having to set it up each time.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to understand the difference between thread-level and workspace-level context — and to see the workspace components firsthand.\n\n#### 1. Navigate to Workspaces\n\nIn SIERRA, click on **Workspaces** in the left navigation. Review any workspaces you already have access to — either ones you created or ones shared with you.\n\nIf you have access to an existing workspace, click into it and look through each tab: Context, Memories, Files, and Task Modes. Read what's there. This is the persistent context that applies to every thread within that workspace.\n\n#### 2. Create a simple workspace\n\nCreate a new workspace for a project, team, or domain you work in regularly. Give it a descriptive name and a brief description.\n\n#### 3. Set the workspace context\n\nIn the **Context** tab, write a short background statement covering:\n\n- What this workspace is for\n- The team or project it supports\n- Any standing guidance that should apply to all threads\n\nThis doesn't need to be long. Even 3-4 sentences of relevant background is enough to start.\n\n#### 4. Upload a file\n\nIn the **Files** tab, upload one document that should be accessible across all threads in this workspace — a reference document, a template, a procedure, or a scope of work.\n\n#### 5. Open a thread inside the workspace\n\nStart a new chat from within the workspace. Ask SIERRA something that relates to the context you set or the file you uploaded.\n\nNotice: you didn't re-paste any background. The workspace context is already there.\n\n#### Key takeaway\n\nWorkspace context is shared and persistent. Thread content is yours and temporary. Everything set at the workspace level — context, memories, files, task modes — is available to every thread and every member without anyone having to set it up again."
+
+  },
+
+  {
+
+    "date": "2026-04-22",
+
+    "title": "Day 16 - Workspace Task Modes",
+
+    "description": "Learn what task modes are—reusable step-by-step instructions for specific, repeatable workflows—and how they differ from workspace context, which runs as always-on background.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to build a simple task mode for a workflow you repeat, and to invoke it in a thread to see how it changes the interaction.\n\n#### 1. Identify a repeatable workflow\n\nThink of something you do regularly in SIERRA that involves more than one step — or something you've had to re-explain more than once. Examples:\n\n- Reviewing a document against a checklist\n- Extracting specific fields from a report\n- Drafting a client summary from raw findings\n- Summarizing a meeting or set of notes into action items\n\n#### 2. Write the task mode instructions\n\nIn a regular SIERRA chat, describe the workflow you want to capture — rough is fine. Then ask:\n\n> \"Based on what I've described, write a reusable task mode prompt I can save in a workspace. It should include: the purpose, the steps to take in order, which files to reference if applicable, and the output format I want.\"\n\nReview and refine the output until it reflects how you'd actually want the workflow to run.\n\n#### 3. Save it as a task mode\n\nIn your workspace, go to the **Task Modes** tab and click **Add Task Mode**. Paste in the instructions SIERRA generated. Give it a clear name.\n\n#### 4. Invoke it in a thread\n\nOpen a new chat within the workspace. Upload any relevant file if the task mode requires one. Invoke the task mode and run it through a real or sample task.\n\nObserve: you didn't write a prompt. You invoked a saved workflow.\n\n#### 5. Note what would go in context vs. a task mode\n\nAfter using the task mode, ask yourself:\n\n- What background information should live in the **workspace context** (always on, applies to everything)?\n- What specific instruction should live in a **task mode** (invoked when needed, for a specific job)?\n\n#### Key takeaway\n\nContext + Memories are always on, for everything. Task Modes are invoked when needed, for specific jobs. If you find yourself writing the same multi-step prompt more than twice, it probably belongs in a task mode."
+
+  },
+
+  {
+
+    "date": "2026-04-23",
+
+    "title": "Day 17 - Workspace Walkthrough",
+
+    "description": "A live walkthrough of the Sierra workspace interface—Settings, Context, Files, Task Modes, and Memories—and the key distinction between personal memories (yours across all chats) and workspace memories (shared with team members for project-level context).",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to build familiarity with the full workspace interface by exploring each section and understanding what belongs where.\n\n#### 1. Open a workspace\n\nNavigate to a workspace you created in yesterday's exercise — or create a new one for this session.\n\n#### 2. Walk through each tab\n\nOpen each section and take stock of what's there:\n\n- **Settings** — Is the name and description accurate? Add or invite a teammate if you want to test shared access.\n- **Context** — Is the background information clear and complete? Would someone new to the workspace understand the purpose from this alone?\n- **Files** — Are the right documents loaded? Would you need to reference any others regularly?\n- **Task Modes** — Do you have any saved? If not, note one workflow that could become one.\n- **Memories** — Review what workspace memories are stored (if any). Are they project/client-specific, or do they belong in personal memories instead?\n\n#### 3. Test the personal vs. workspace memory distinction\n\nCheck your personal memories (in your profile settings). Then check workspace memories (inside the workspace).\n\nFor each memory that exists, ask: is this about *me* (role, preferences, domain) or about *this project/client* (scope, stakeholders, requirements)?\n\n- If it's about you → personal memories\n- If it's about the work → workspace memories\n\nMove any that are in the wrong place.\n\n#### 4. Open a thread and verify what's available\n\nStart a new chat within the workspace. Ask SIERRA what it knows about the current project or context. Confirm that the workspace context and memories are being applied.\n\n#### Key takeaway\n\nThe workspace interface is the control panel for persistent, shared context. Understanding what belongs in each section — context, memories, files, task modes — is what makes a workspace useful rather than just organized."
+
+  },
+
+  {
+
+    "date": "2026-04-24",
+
+    "title": "Day 18 - Workspace Development",
+
+    "description": "Learn the full process for building a workspace from scratch—using SIERRA itself to draft the context block and task mode instructions—based on a real proposal generation workflow built for an ABS Bureau team.",
+
+    "sharepointUrl": "",
+
+    "resourceType": "video",
+
+    "exerciseMarkdown": "### Exercise\n\nThe goal is to use the approach from the video to build out a more complete, useful workspace — letting SIERRA do the heavy lifting on drafting the components.\n\n#### 1. Choose a workflow to systematize\n\nPick something your team does repeatedly that involves consistent steps, reference documents, and a predictable output. Good candidates:\n\n- Proposal or report generation\n- Survey findings review and summary\n- Document gap analysis\n- Client briefing preparation\n- Regulatory compliance review\n\n#### 2. Start in a regular chat — not the workspace\n\nOpen a new standard thread. Describe what you're trying to build:\n\n- What the workspace is for\n- Who uses it and what they're trying to accomplish\n- The general workflow from input to output\n- What changes per task (variables) vs. what stays the same (boilerplate)\n- Key pain points in the current process\n\nYou can use the microphone and talk through it stream of consciousness if that's easier.\n\n#### 3. Ask SIERRA to summarize — then verify\n\nAsk SIERRA to summarize everything it's understood so far. Read through it. Correct anything that's off. This step is about making sure you and SIERRA are working from the same understanding before you build anything.\n\n#### 4. Upload sample materials if you have them\n\nIf you have examples — past proposals, completed reports, filled templates — upload 2-4 of them. Ask SIERRA to analyze the structure: what's consistent, what varies, what the key sections are, what the variables are.\n\nReview that output before moving on.\n\n#### 5. Ask SIERRA to draft the workspace context\n\nAsk:\n\n> \"Based on everything we've discussed and analyzed, draft the workspace context for this workspace. Include: purpose, standard workflow, key variables, and an onboarding section so a new team member can open a chat and understand how to use this workspace immediately.\"\n\nRefine as needed. Copy to clipboard.\n\n#### 6. Ask SIERRA to draft a task mode\n\nDescribe the specific repeatable task you want the task mode to handle. Tell SIERRA the steps you want it to take — and ask it to write the prompt. Refine it. Copy to clipboard.\n\n#### 7. Build the workspace\n\nGo into your workspace, paste the context, create the task mode, and upload any reference files. Then open a thread, invoke the task mode with a real or sample input, and run it.\n\n#### Key takeaway\n\nYou don't have to write workspace components from scratch. Use SIERRA in a standard chat to draft the context and task mode instructions — the same meta-prompt approach from Day 9 applies here. Build it once. The team benefits every time."
+
   }
 
 ]

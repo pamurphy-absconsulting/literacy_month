@@ -1,5 +1,5 @@
 # SIERRA Literacy Month — Week 4 Slides
-## Days 14–19: Memories, Workspaces & Knowledge Tools
+## Days 14–19: Memories, Workspaces & Workflow Development
 
 ---
 
@@ -83,25 +83,27 @@ A workspace is a collaborative environment where multiple 'members' can access c
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 17: Plato — Sierra's Maritime Research Mode*
+*Day 17: Workspace Walkthrough*
 
 ---
 
-**Day 17: Plato — Sierra's Maritime Research Mode**
+**Day 17: Workspace Walkthrough**
 
-- Plato is a specialized Sierra mode for maritime rules and regulatory research — not a general knowledge base
-- Built for surveyors, engineers, and auditors researching Class rules, IMO compliance, and survey procedures
-- **Knowledge sources inside Plato** *(expanding as Plato develops):*
-  - **ABS Rules & Guides** — classification rules for vessel types, offshore structures, and more
-  - **IMO/IACS Publications** — relevant conventions, codes, and unified requirements *(partial collection)*
-  - **ABS Internal Procedures** — procedural requirements and job aids for surveys and inspections
-  - **eCFR** — US federal regulations, Titles 33 (Navigation) and 46 (Shipping)
-- Currently in preview — not all content is indexed yet; Plato will tell you when something isn't available rather than guessing
-- Plato is designed to show what it searched and why before answering — follow that reasoning to refine your query
+*Live walkthrough of the Sierra workspace interface — building one from scratch.*
 
-[Visual: Four-source diagram — ABS RULES & GUIDES / IMO/IACS / ETQ (ABS Procedures) / eCFR — all feeding into PLATO MODE (center). Label: "Sierra's specialized maritime research assistant — Class rules, regulations, and survey procedures."]
+**Settings:** Name, description, and member access — search anyone in the company and grant access; the workspace appears in their "Shared with me" tab.
 
-**ABS & Affiliated Companies**
+**Context:** Workspace-level background information — set once, available in every chat opened within the workspace. Every new thread starts already up to speed on the domain.
+
+**Files:** Upload key documents at the workspace level — accessible across all threads and members without re-uploading.
+
+**Task Modes:** Saved, reusable prompts for specific tasks — configured and available to any member in any chat within the workspace.
+
+**Memories (in beta):**
+- Personal memories: your role, specialization, preferences — injected into all your chats
+- Workspace memories: project/client-specific — shared with all workspace members; not the whole company
+
+[Visual: Live screen recording — Sierra workspace interface showing Settings, Context, Files, Task Modes, and Memories tabs. Demo workspace built from scratch during recording.]
 
 **ABS & Affiliated Companies**
 
@@ -109,22 +111,34 @@ A workspace is a collaborative environment where multiple 'members' can access c
 
 **ABS & Affiliated Companies**
 **SIERRA Literacy Month**
-*Day 18: Using Plato Effectively*
+*Day 18: Workspace Development*
 
 ---
 
-**Day 18: Using Plato Effectively**
+**Day 18: Workspace Development**
 
-- **Be specific:** state vessel type, rule set reference, Part/Chapter number, or survey stage — vague questions produce vague results
-- **Search rule first, then procedure:** find the Class requirement or regulation first, then search ETQ for the corresponding survey procedure or job aid
-- **Plato is honest about gaps:** if content isn't indexed, it will say so rather than guess — treat that as a signal to check official sources or consult an SME within ABS
-- **Combine with file uploads:** attach a survey report or project document, then ask Plato to cross-reference against the applicable Class rules or regulatory requirements
-- **Outside Plato mode:** the standalone eCFR tool in the main Sierra chat lets you search US federal regulations without entering Plato — useful for quick regulatory lookups
+*Full workspace build for a proposal generation workflow — step by step.*
 
-> *Less useful: "What are the requirements for this vessel?"*
-> *More useful: "What are the hull inspection requirements for a bulk carrier under MVR Part 7?"*
+**The approach:** Start in a regular chat, not the workspace. Outline what you're trying to configure — you can use the mic and describe it stream of consciousness. Then let Sierra help build the workspace components.
 
-[Visual: Two-prompt comparison (less useful vs. more useful). Below: Rule → Procedure flow: FIND THE REQUIREMENT (Rule Manager / IMO / eCFR) → FIND THE PROCESS (ETQ: PRI/JBA). Callout: "If Plato can't find it, verify through official sources or consult an ABS subject matter expert."]
+**Step 1 — Establish shared understanding**
+Describe the workflow, attach meeting notes. Ask Sierra to summarize everything — not for the summary itself, but to verify it understands the domain before you build anything.
+
+**Step 2 — Analyze the source material**
+Upload sample proposals and templates. Ask Sierra to extract: section structure across proposal types, all variable placeholders, boilerplate vs. customization sections, regional content patterns, key differences by proposal type. Review it. This is the foundation.
+
+**Step 3 — Generate the workspace context**
+Ask Sierra to write the context block — include purpose, section structure, key variables, team structure, glossary, and an onboarding section so new members can press start and understand the workspace immediately.
+
+**Step 4 — Build the task mode**
+Describe the steps you want the prompt to take — Sierra writes the task mode instructions. Paste into the workspace. The prompt: extract and confirm variables → check with user on scope → generate section by section.
+
+**Step 5 — Upload workspace files**
+Templates and reference documents that every chat should be able to pull from — loaded once, available always.
+
+**The goal:** 80% of the work handled within Sierra. Teams finish the last 20%. That's a win.
+
+[Visual: Live screen recording — Sierra chat used to build workspace components, then switching into the workspace to paste context, create the task mode, and upload files. Ends with a sample RFQ run through the completed workspace.]
 
 **ABS & Affiliated Companies**
 

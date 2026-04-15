@@ -132,18 +132,20 @@
 - Real examples: emergency response validation, incident root cause analysis, regulatory compliance check, flag state compliance
 - Context + Memories are always on for everything; Task Modes are invoked when needed for specific jobs
 
-**Day 17: Plato — Sierra's Maritime Research Mode**
-- Plato is a specialized Sierra mode for maritime rules and regulatory research — not a general knowledge base *(in preview; may not be available to all users)*
-- Built for surveyors, engineers, and auditors researching Class rules, IMO compliance, and survey procedures
-- Knowledge sources *(expanding as Plato develops):* ABS Rules & Guides, IMO/IACS publications (partial), ABS internal survey procedures and job aids, and eCFR (Titles 33 and 46)
-- Plato shows its reasoning and says when content isn't indexed rather than guessing
+**Day 17: Workspace Walkthrough**
+- Live walkthrough of the Sierra workspace interface: Settings (name, description, member access), Context (workspace-level background available in every thread), Files (uploaded once, accessible across all chats and members), Task Modes (saved reusable prompts for specific tasks), and Memories (in beta)
+- Personal memories: your role, specialization, and preferences — injected across all your personal chats
+- Workspace memories: project/client-specific context — shared with all workspace members, not the whole company
+- Setting workspace context means every new thread within that workspace starts already up to speed on the domain
 
-**Day 18: Using Plato Effectively**
-- Be specific: state vessel type, rule set reference, Part/Chapter, or survey stage — vague queries produce vague results
-- Search rule first, then procedure: find the Class requirement first, then search ETQ for the corresponding survey procedure or job aid
-- Plato is honest about gaps — if content isn't indexed, verify through official sources or consult an ABS SME
-- Combine with file uploads: attach a project document, ask Plato to cross-reference against applicable Class rules or regulations
-- Outside Plato mode: standalone eCFR tool in main Sierra chat handles quick regulatory lookups without entering Plato
+**Day 18: Workspace Development**
+- Start building in a regular chat, not the workspace — describe what you're configuring at a high level (can use mic/stream of consciousness), then let Sierra help draft the components
+- Step 1: establish shared understanding — describe the workflow, attach notes, ask Sierra to summarize to verify it understands the domain before building
+- Step 2: analyze source material — upload samples and templates, ask Sierra to extract structure, variables, boilerplate vs. customization, and patterns; review before proceeding
+- Step 3: generate workspace context — ask Sierra to write the context block including purpose, structure, variables, and an onboarding section for new members
+- Step 4: build the task mode — describe the steps you want the prompt to take, let Sierra write the instructions, paste into the workspace
+- Step 5: upload workspace files — templates and reference documents loaded once, available to all chats
+- The 80/20 principle: Sierra handles 80% of the work; teams finish the last 20%
 
 ---
 
