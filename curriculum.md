@@ -149,32 +149,13 @@
 
 ---
 
-### WEEK 5 (April 28 - May 1): Putting It Together
+### WEEK 5 (April 28 - May 1): Live Demos
 *4 days: Monday - Thursday*
 
-**Day 19: SkillShare & HR Tools**
-- SkillShare: Sierra can search ABS Group's expertise directory — use when you need a human expert, not just an AI answer *(ABS Group employees only)*
-- HR Tool: Sierra has access to ABS HR knowledge — policies, benefits, procedures, specific to company and country
-- Both are retrieval tools — same pipeline as Plato and workspace files, different knowledge source
-- SkillShare is for finding people; HR is for finding policy
-
-**Day 20: Real Workflow — Writing & Document Work**
-- End-to-end walkthrough: upload the file → set context → prompt with a specific ask → refine output
-- Use workspace context or memories so Sierra already knows your audience, standards, and style
-- Use a Task Mode for repeatable document tasks — review process, summary format, client deliverable template
-- Always review outputs before sending — Sierra is your first draft engine, not your final editor
-
-**Day 21: Real Workflow — Research & Analysis**
-- End-to-end walkthrough: a typical research stack — Plato for ABS rules → eCFR for federal regulations → web search for current external info → files for project specifics → synthesize; use the tools available and relevant, not all at once
-- Ask Sierra to cite sources, state its assumptions, and flag what may need verification — makes gaps and errors easier to spot
-- Hallucinations are most likely near the edges: obscure topics, recent events, highly specific technical details — always cross-check against authoritative sources
-- Build a repeatable research workflow in a workspace: load relevant files, set context, create a Task Mode for the research process
-
-**Day 22: What You Now Know — Wrap-Up & Certification Prep**
-- The mental model you've built: model limits → context → retrieval (RAG) → prompting → workspaces → full workflows
-- The habits that matter: focused threads, specific queries, provide context before you prompt, verify before you send
-- Common mistakes to avoid going forward
-- What's next: certification exam through iAchieve — and then actually using this every day
+**Days 19–22: Live Demo Sessions** *(content TBD)*
+- Format: live screen recordings inside Sierra — no slides, no lecture
+- Six demo arcs under development; see `demos.md` for current planning
+- Specific days, titles, and content to be determined once demo recordings are finalized
 
 ---
 
